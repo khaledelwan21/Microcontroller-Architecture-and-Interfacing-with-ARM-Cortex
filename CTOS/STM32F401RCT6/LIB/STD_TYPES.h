@@ -9,7 +9,7 @@
 
 /**< Unsigned integer types */
 typedef unsigned char                        u8;           /**< 8-bit unsigned integer type */
-typedef unsigned short                       u16;                      /**< 16-bit unsigned integer type */
+typedef unsigned short                       u16;          /**< 16-bit unsigned integer type */
 typedef unsigned int                         u32;          /**< 32-bit unsigned integer type */
 typedef unsigned long long                   u64;          /**< 64-bit unsigned integer type */
 
@@ -24,11 +24,14 @@ typedef float                                f32;            /**< Single-precisi
 typedef double                               f64;            /**< Double-precision floating-point type */
 typedef long double                          f96;            /**< Extended-precision floating-point type */
 
-typedef u8                                   Std_ReturnType;
+
+typedef u8                                   Std_ReturnType; /**< Standard return type */
 
 
  
-#define E_OK                            ((Std_ReturnType)0)
+#define E_OK                            ((Std_ReturnType)0)  
 #define E_NOT_OK                        ((Std_ReturnType)1)
- /**< Standard return type, typically used for function return values */
+
+
+
 #endif /* STD_TYPES_H */

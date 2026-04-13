@@ -7,8 +7,8 @@
 #ifndef RCC_INTERFACE_H
 #define RCC_INTERFACE_H
 
-Std_ReturnType RCC_voidInitSysClock(void);
-Std_ReturnType RCC_voidEnableClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId);
-Std_ReturnType RCC_voidDisableClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId); 
+Std_ReturnType RCC_InitSysClock(void);
+Std_ReturnType RCC_EnableClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId);
+Std_ReturnType RCC_DisableClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId); 
 
 #endif /* RCC_INTERFACE_H */   
