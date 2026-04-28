@@ -8,7 +8,9 @@
 #define RCC_INTERFACE_H
 
 
-
+#include "STD_TYPES.h"
+#include "RCC_private.h"
+#include "RCC_config.h"
 
 
 #define RCC_AHB1_BUS 0

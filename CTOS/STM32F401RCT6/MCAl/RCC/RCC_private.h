@@ -18,7 +18,9 @@
  */
 
 
-#define RCC_BASE_ADDRESS            (*(volatile u32*)0x40023800)
+
+
+#define RCC_BASE_ADDRESS            0x40023800
 #define RCC_CR                      (*(volatile u32*)(RCC_BASE_ADDRESS + 0x00))
 #define RCC_PLLCFGR                 (*(volatile u32*)(RCC_BASE_ADDRESS + 0x04))
 #define RCC_CFGR                    (*(volatile u32*)(RCC_BASE_ADDRESS + 0x08))
@@ -32,7 +34,7 @@
  * @defgroup RCC_CR_BITS RCC_CR Register Bits
  * @brief Bits used to control the clock sources and their readiness in the RCC_CR register.
  */
-#define RCC_CR_HSEON_BIT                     16
+#define RCC_CR_HSEON_BIT                    16
 #define RCC_CR_HSERDY_BIT                   17
 #define RCC_CR_HSEBYP_BIT                   18
 #define RCC_CR_PLLON_BIT                    24
@@ -123,9 +125,9 @@
  * @brief Constants used to select the system clock source in the RCC_CFGR register.
  */
 
-#define RCC_HSI                              0x00 
-#define RCC_HSE                              0x01
-#define RCC_PLL                              0x02
+#define RCC_HSI                              0x0
+#define RCC_HSE                              0X1
+#define RCC_PLL                              0x2
 
 /**
  * @defgroup RCC_HSE_BYPASS_MODES HSE Bypass Modes
@@ -134,5 +136,7 @@
 #define RCC_RC_CLK                           0
 #define RCC_CRYSTAL_CLK                      1
 
+
+#define FLASH_ACR (*(volatile unsigned int*)0x40023C00)
 
 #endif /* RCC_PRIVATE_H */

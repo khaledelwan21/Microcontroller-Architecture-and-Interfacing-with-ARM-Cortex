@@ -13,7 +13,7 @@
 
 
 
-/*****************************<MCAL************************************/
+/****************************<MCAL************************************/
 #include "RCC_interface.h"
 #include "RCC_private.h"
 #include "RCC_config.h"
@@ -114,6 +114,7 @@ Std_ReturnType RCC_InitSysClock(void)
             /* Configure PLL source, multiplication and division factors here based on RCC_config.h settings */
             SET_BIT(RCC_CR, RCC_CR_PLLON_BIT); // PLLON bit
             while (GET_BIT(RCC_CR, RCC_CR_PLLRDY_BIT) == 0); // PLLRDY bit
+            FLASH_ACR |= (2 << 0);
             RCC_CFGR &= ~(0x03 << RCC_CFGR_SW_BITS); // Clear the SW bits
             RCC_CFGR |= (RCC_PLL << RCC_CFGR_SW_BITS); // Select PLL as system clock source
             while (((RCC_CFGR >> 2) & 0x03) != RCC_PLL);

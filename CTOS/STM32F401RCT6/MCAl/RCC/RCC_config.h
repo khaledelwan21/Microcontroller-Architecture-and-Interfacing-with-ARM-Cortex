@@ -29,7 +29,7 @@
  * @endcode
  */
 
-#define RCC_SYS_CLK     RCC_HSE
+#define RCC_SYS_CLK     RCC_PLL
 
  /**
   * @brief PLL configuration parameters
@@ -46,9 +46,9 @@
   * #define RCC_PLLP    2, 4, 6, or 8 
   */
  
-#define RCC_PLLM      8   /**< PLLM division factor */
+#define RCC_PLLM      16   /**< PLLM division factor */
 #define RCC_PLLN      336 /**< PLLN multiplication factor */
-#define RCC_PLLP      2   /**< PLLP division factor */
+#define RCC_PLLP      4   /**< PLLP division factor */
 
 /** @brief Encode PLLP value for register configuration
  * The RCC_PLLP_ENCODE macro takes a PLLP division factor (2, 4, 6, or 8) and encodes it into the format required for the RCC_PLLCFGR register. The PLLP division factor is encoded as follows:
@@ -81,7 +81,7 @@
 #define RCC_CLK_BYPASS    RCC_CRYSTAL_CLK   /**< HSE bypass mode disabled (using external crystal) */
 
 
-
+#define RCC_PLLSRC        HSI
 
 
 
