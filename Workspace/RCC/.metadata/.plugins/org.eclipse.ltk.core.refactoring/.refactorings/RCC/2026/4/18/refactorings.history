@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;MCAl&apos; to &apos;Core&apos;" description="Move &apos;MCAl&apos; to &apos;Core&apos;" destination="Core" element1="MCAl" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1777384763908" updateReferences="true"/>
+</session>

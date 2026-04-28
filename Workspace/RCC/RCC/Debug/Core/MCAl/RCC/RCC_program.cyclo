@@ -1,0 +1,4 @@
+../Core/MCAl/RCC/RCC_program.c:21:13:RCC_EnableHSE	2
+../Core/MCAl/RCC/RCC_program.c:47:16:RCC_InitSysClock	4
+../Core/MCAl/RCC/RCC_program.c:138:16:RCC_EnablePeripheralClock	5
+../Core/MCAl/RCC/RCC_program.c:181:16:RCC_DisablePeripheralClock	5

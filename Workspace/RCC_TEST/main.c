@@ -1,0 +1,18 @@
+/******<LIB>**********/
+
+#include  "STD_TYPES.h"
+#include "BIT_MATH.h"
+
+/******<MCAL>*********/
+
+#include "RCC_interface.h"
+
+int main(void)
+{
+	/**<INIT RCC >***/
+	
+		RCC_InitSysClock() ;
+	
+		while(1) ;
+	
+}
