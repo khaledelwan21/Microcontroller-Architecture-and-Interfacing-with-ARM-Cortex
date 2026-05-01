@@ -177,7 +177,10 @@ Std_ReturnType RCC_EnablePeripheralClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId
 
 }
           
-
+/***
+ * @brief: Disable peripheral clock
+ * This function disables the clock for a specific peripheral connected to one of the buses (AHB1, AHB2, APB1, or APB2) in the STM32F401RCT6 microcontroller. It takes the bus ID and peripheral ID as parameters, identifies the correct register to modify based on the bus ID, and then clears the corresponding bit in the appropriate RCC enable
+ */
 Std_ReturnType RCC_DisablePeripheralClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId)
 {
     Std_ReturnType Local_FunctionState = E_NOT_OK;
@@ -214,11 +217,6 @@ Std_ReturnType RCC_DisablePeripheralClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralI
         Local_FunctionState = E_NOT_OK;
         break;
     }
-
-
-
-
-
 
     return Local_FunctionState;
 

@@ -25,7 +25,7 @@ typedef double                               f64;            /**< Double-precisi
 typedef long double                          f96;            /**< Extended-precision floating-point type */
 
 
-typedef u8                                   Std_ReturnType; /**< Standard return type */
+typedef u8                                  Std_ReturnType; /**< Standard return type */
 
 
  
