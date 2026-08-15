@@ -9,7 +9,7 @@
 
 
 
-#define GPIOA_BASE_ADDRESS 0x40020000U  
+#define GPIOA_BASE_ADDRESS 0x40020000U
 #define GPIOB_BASE_ADDRESS 0x40020400U
 #define GPIOC_BASE_ADDRESS 0x40020800U
 #define GPIOD_BASE_ADDRESS 0x40020C00U
@@ -22,7 +22,7 @@
 #define GPIOA_OTYPER  *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x04))
 #define GPIOA_OSPEEDR *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x08))
 #define GPIOA_PUPDR   *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x0C))
-#define GPIOA_IDR     *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x10)) 
+#define GPIOA_IDR     *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x10))
 #define GPIOA_ODR     *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x14))
 #define GPIOA_BSRR    *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x18))
 #define GPIOA_LCKR    *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x1C))
@@ -129,7 +129,7 @@
 #define GPIO_PULL_UP_DOWN_PULL_UP_DOWN 0b11
 
 /***********************< PIN VALUES >************************************/
-#define GPIO_PIN_VALUE_LOW  0
+#define GPIO_PIN_VALUE_LOW 0
 #define GPIO_PIN_VALUE_HIGH 1
 
 

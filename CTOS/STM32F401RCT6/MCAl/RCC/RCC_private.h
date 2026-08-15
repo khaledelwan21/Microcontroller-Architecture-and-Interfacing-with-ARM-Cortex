@@ -20,7 +20,7 @@
 
 
 
-#define RCC_BASE_ADDRESS            0x40023800
+#define RCC_BASE_ADDRESS            0x40023800U
 #define RCC_CR                      (*(volatile u32*)(RCC_BASE_ADDRESS + 0x00))
 #define RCC_PLLCFGR                 (*(volatile u32*)(RCC_BASE_ADDRESS + 0x04))
 #define RCC_CFGR                    (*(volatile u32*)(RCC_BASE_ADDRESS + 0x08))

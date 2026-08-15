@@ -29,7 +29,7 @@
  * @endcode
  */
 
-#define RCC_SYS_CLK     RCC_PLL
+#define RCC_SYS_CLK     RCC_HSI
 
  /**
   * @brief PLL configuration parameters
@@ -81,9 +81,9 @@
 #define RCC_CLK_BYPASS    RCC_CRYSTAL_CLK   /**< HSE bypass mode disabled (using external crystal) */
 
 
-#define RCC_PLLSRC        RCC_HSI
+#define RCC_PLLSRC        RCC_HSI   /**< PLL source clock HSE or HSI*/
 
 
 
 
-#endif /* RCC_CONFIG_H */
+#endif         /* RCC_CONFIG_H */

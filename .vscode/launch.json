@@ -2,18 +2,21 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "STM32 Debug (st-util)",
-      "type": "cortex-debug",
-      "request": "launch",
-      "servertype": "external",
-      "svdFile": "/home/khaled-ahmed-elwan/STMicroelectronics/STM32Cube/STM32CubeProgrammer/SVD/STM32F401.svd",
-      "gdbTarget": "localhost:4242",
-      "device": "STM32F401RE",
-      "interface": "swd",
-      "speed": 4000,
-      "runToEntryPoint": "main",
+      "name": "Cortex Debug (STM32F401)",
       "cwd": "${workspaceFolder}",
-      "executable": "${workspaceFolder}/Workspace/GPIO/GPIO/build/GPIO.elf"
+      "executable": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/Rcc_test/build/Debug/Rcc_test.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "runToEntryPoint": "main",
+      "servertype": "openocd",
+      "device": "STM32F401RC",
+      "configFiles": [
+        "interface/stlink.cfg",
+        "target/stm32f4x.cfg"
+      ],
+      "svdFile": "/home/khaled-ahmed-elwan/STMicroelectronics/STM32Cube/STM32CubeProgrammer/SVD/STM32F401.svd",
+      "showDevDebugOutput": "none",
+      "openOCDLaunchCommands": ["adapter speed 1000"]
     }
   ]
 }
