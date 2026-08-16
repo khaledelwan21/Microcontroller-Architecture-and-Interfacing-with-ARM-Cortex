@@ -19,20 +19,43 @@
 #include <stdint.h>
 #include "RCC_interface.h"
 #include "GPIO_interface.h"
+
+
+u8 pinValue;
 int main(void)
 {
 
  RCC_InitSysClock();
  RCC_EnablePeripheralClock(RCC_AHB1_BUS,RCC_AHB1ENR_GPIOC_EN_BIT);
-   
+ RCC_EnablePeripheralClock(RCC_AHB1_BUS,RCC_AHB1ENR_GPIOA_EN_BIT);
+
+/******<< GPIOC 13 *****/
+
  GPIO_SetPinMode(PORTC, GPIO_PIN_13, GPIO_MODE_OUTPUT);
  GPIO_SetPinOutputType(PORTC, GPIO_PIN_13, GPIO_OUTPUT_TYPE_PUSH_PULL);
  GPIO_SetPinOutputSpeed(PORTC, GPIO_PIN_13, GPIO_OUTPUT_SPEED_LOW);
- //GPIO_SetPinPullUpDown(PORTC, GPIO_PIN_13, GPIO_PULL_UP_DOWN_PULL_UP);
- GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_LOW);
+ GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH);
+
+/******<< GPIOA 9 *****/
+
+GPIO_SetPinMode(PORTA, GPIO_PIN_9, GPIO_MODE_INPUT);
+GPIO_SetPinPullUpDown(PORTA, GPIO_PIN_9, GPIO_PULL_UP_DOWN_PULL_DOWN);
+
  /* Loop forever */
 
     while (1) 
     {
+  
+        GPIO_GetPinValue(PORTA, GPIO_PIN_9, &pinValue);
+        if(pinValue == GPIO_PIN_VALUE_HIGH)
+        {
+            GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH);
+        }
+        else
+        {
+            GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_LOW);
+        }
+
+
     }
 }

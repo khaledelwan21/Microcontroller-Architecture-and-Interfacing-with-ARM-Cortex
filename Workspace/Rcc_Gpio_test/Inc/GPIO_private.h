@@ -9,7 +9,7 @@
 
 
 
-#define GPIOA_BASE_ADDRESS 0x40020000U
+#define GPIOA_BASE_ADDRESS 0x40020000U  
 #define GPIOB_BASE_ADDRESS 0x40020400U
 #define GPIOC_BASE_ADDRESS 0x40020800U
 #define GPIOD_BASE_ADDRESS 0x40020C00U
@@ -22,7 +22,7 @@
 #define GPIOA_OTYPER  *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x04))
 #define GPIOA_OSPEEDR *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x08))
 #define GPIOA_PUPDR   *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x0C))
-#define GPIOA_IDR     *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x10))
+#define GPIOA_IDR     *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x10)) 
 #define GPIOA_ODR     *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x14))
 #define GPIOA_BSRR    *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x18))
 #define GPIOA_LCKR    *((volatile u32*)(GPIOA_BASE_ADDRESS + 0x1C))
@@ -107,29 +107,29 @@
 #define GPIO_PIN_15 15
 
 /*************************< MODES >************************************************/
-#define GPIO_MODE_INPUT  0b00
-#define GPIO_MODE_OUTPUT 0b01
-#define GPIO_MODE_AF     0b10
-#define GPIO_MODE_ANALOG 0b11
+#define GPIO_MODE_INPUT  0x00
+#define GPIO_MODE_OUTPUT 0x01
+#define GPIO_MODE_AF     0x02
+#define GPIO_MODE_ANALOG 0x03
 
 /*************************< OUTPUT TYPES >***********************************************/
-#define GPIO_OUTPUT_TYPE_PUSH_PULL 0b00
-#define GPIO_OUTPUT_TYPE_OPEN_DRAIN 0b01
+#define GPIO_OUTPUT_TYPE_PUSH_PULL 0x00
+#define GPIO_OUTPUT_TYPE_OPEN_DRAIN 0x01
 
 /*************************< OUTPUT SPEEDS >***********************************************/
-#define GPIO_OUTPUT_SPEED_LOW 0b00
-#define GPIO_OUTPUT_SPEED_MEDIUM 0b01
-#define GPIO_OUTPUT_SPEED_HIGH 0b10
-#define GPIO_OUTPUT_SPEED_VERY_HIGH 0b11
+#define GPIO_OUTPUT_SPEED_LOW 0x00
+#define GPIO_OUTPUT_SPEED_MEDIUM 0x01
+#define GPIO_OUTPUT_SPEED_HIGH 0x02
+#define GPIO_OUTPUT_SPEED_VERY_HIGH 0x03
 
 /*************************< PULL UP DOWN RESISTORS >***********************************************/
-#define GPIO_PULL_UP_DOWN_NONE 0b00
-#define GPIO_PULL_UP_DOWN_PULL_UP 0b01
-#define GPIO_PULL_UP_DOWN_PULL_DOWN 0b10    
-#define GPIO_PULL_UP_DOWN_PULL_UP_DOWN 0b11
+#define GPIO_PULL_UP_DOWN_NONE 0x00
+#define GPIO_PULL_UP_DOWN_PULL_UP 0x01
+#define GPIO_PULL_UP_DOWN_PULL_DOWN 0x02    
+
 
 /***********************< PIN VALUES >************************************/
-#define GPIO_PIN_VALUE_LOW 0
+#define GPIO_PIN_VALUE_LOW  0
 #define GPIO_PIN_VALUE_HIGH 1
 
 
