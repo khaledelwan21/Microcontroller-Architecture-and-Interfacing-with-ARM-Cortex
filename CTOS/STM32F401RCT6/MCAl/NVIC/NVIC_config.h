@@ -9,7 +9,7 @@
  
  
  
- 
+ #define NUM_OF_INTERUPTS  84
  
  
  

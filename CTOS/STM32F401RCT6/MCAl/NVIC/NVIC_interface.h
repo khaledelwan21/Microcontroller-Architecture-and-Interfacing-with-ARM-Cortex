@@ -24,9 +24,11 @@
  
  Std_ReturnType NVIC_GetPendingIRQ(IRQn_Type Copy_IRQn,u8 *Copy_ReturnPendingFlag) ;
  
+ Std_ReturnType NVIC_GetActiveIRQ(IRQn_Type Copy_IRQn,u8 *Copy_ReturnActiveFlag) ;
+
  Std_ReturnType NVIC_SetPriority(IRQn_Type Copy_IRQn, u32 Copy_priority) ;
  
- Std_ReturnType NVIC_GetPriority(IRQn_Type Copy_IRQn) ;
+ Std_ReturnType NVIC_GetPriority(IRQn_Type Copy_IRQn,u32 *Copy_ReturnPriority) ;
  
  ##endif   /****< NVIC_interface_h ******************/
  

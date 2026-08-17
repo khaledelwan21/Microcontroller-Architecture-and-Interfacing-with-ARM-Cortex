@@ -161,9 +161,51 @@
     return Local_FunctionState;
  }
  
- Std_ReturnType NVIC_SetPriority(IRQn_Type Copy_IRQn, u32 priority) 
+ Std_ReturnType NVIC_GetActiveIRQ(IRQn_Type Copy_IRQn,u8 *Copy_ReturnActiveFlag) 
  {
-	 
+     Std_ReturnType Local_FunctionState = E_NOT_OK;
+     
+    if(Copy_ReturnActiveFlag != NULL)
+    {
+     switch (Copy_IRQn / 32)
+    {
+        case 0:
+            *Copy_ReturnActiveFlag=GET_BIT(NVIC_IABR0,Copy_IRQn % 32) ;
+            Local_FunctionState = E_OK;
+            break;
+
+        case 1:
+            *Copy_ReturnActiveFlag=GET_BIT(NVIC_IABR1,Copy_IRQn % 32) ;
+            Local_FunctionState = E_OK;
+            break;
+
+        case 2:
+            *Copy_ReturnActiveFlag=GET_BIT(NVIC_IABR2,Copy_IRQn % 32) ;
+            Local_FunctionState = E_OK;
+            break;
+
+        default:
+            return  Local_FunctionState;
+    }
+    }
+    return Local_FunctionState;
+ }
+ Std_ReturnType NVIC_SetPriority(IRQn_Type Copy_IRQn, u32 Copy_priority) 
+ {
+	  Std_ReturnType Local_FunctionState = E_NOT_OK;
+      
+    if (Copy_IRQn < 0 || Copy_IRQn >= NUM_OF_INTERUPTS || Copy_priority > 15) 
+    {
+        return Local_FunctionState; // Invalid IRQ number or priority
+    }   
+    else 
+    {
+        u8 Local_Index = Copy_IRQn/4 ; // Store the IRQ number in a global variable
+        NVIC_IPR_Base_Address[Local_Index] = (Copy_priority << 4); // Set the priority in the corresponding IPR register
+        SCB_AIRCR = 0x05FA0700; // Set the priority grouping to 4 bits for pre-emption priority and 0 bits for subpriority
+        Local_FunctionState = E_OK;
+    }
+    return Local_FunctionState;
  }
  
  Std_ReturnType NVIC_GetPriority(IRQn_Type Copy_IRQn) 

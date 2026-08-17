@@ -46,6 +46,13 @@
 #define NVIC_IABR1    (*(volatile u32 *)(NVIC_BASE_ADDRESS + 0x204))
 #define NVIC_IABR2    (*(volatile u32 *)(NVIC_BASE_ADDRESS + 0x208))
 
+/* NVIC Interrupt Priority Registers */
+
+#define NVIC_IPR_Base_Address    (*(volatile u8 *)(NVIC_BASE_ADDRESS + 0x300))
+
+#define SCB_BASE_ADDRESS      0xE000ED00
+#definne SCB_AIRCR    (*(volatile u32 *)(SCB_BASE_ADDRESS + 0x0C))
+
 
 typedef u8 IRQn_Type;
 
