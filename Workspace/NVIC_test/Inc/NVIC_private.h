@@ -48,11 +48,19 @@
 
 /* NVIC Interrupt Priority Registers */
 
-#define NVIC_IPR_Base_Address    (*(volatile u8 *)(NVIC_BASE_ADDRESS + 0x300))
+#define NVIC_IPR_Base_Address    ((volatile u8 *)(NVIC_BASE_ADDRESS + 0x300))
 
 #define SCB_BASE_ADDRESS      0xE000ED00
-#definne SCB_AIRCR    (*(volatile u32 *)(SCB_BASE_ADDRESS + 0x0C))
+#define SCB_AIRCR    (*(volatile u32 *)(SCB_BASE_ADDRESS + 0x0C))
 
+
+
+
+#define _16GROUP_0SUB       0x05FA0300
+#define _8GROUP_2SUB      	0x05FA0400
+#define _4GROUP_4SUB        0x05FA0500
+#define _2GROUP_8SUB	    0x05FA0600
+#define _0GROUP_16SUB       0x05FA0700
 
 typedef u8 IRQn_Type;
 

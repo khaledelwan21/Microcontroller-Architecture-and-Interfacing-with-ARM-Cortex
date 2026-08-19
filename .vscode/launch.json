@@ -4,7 +4,7 @@
     {
       "name": "Cortex Debug (STM32F401)",
       "cwd": "${workspaceFolder}",
-      "executable": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/Rcc_Gpio_test/build/Debug/Rcc_test.elf",
+      "executable": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/NVIC_test/build/Debug/Rcc_test.elf",
       "request": "launch",
       "type": "cortex-debug",
       "runToEntryPoint": "main",
