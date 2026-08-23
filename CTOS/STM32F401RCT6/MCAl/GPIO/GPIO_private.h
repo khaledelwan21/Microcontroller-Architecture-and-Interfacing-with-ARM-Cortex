@@ -82,6 +82,8 @@
 #define GPIOE_AFRH    *((volatile u32*)(GPIOE_BASE_ADDRESS + 0x24))
 
 /***************************< PORTS >************************************************/
+#define GPIO_PORTS_Count  3
+
 #define PORTA 0
 #define PORTB 1
 #define PORTC 2
