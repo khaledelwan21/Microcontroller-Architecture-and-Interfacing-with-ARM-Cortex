@@ -1,0 +1,6 @@
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/GPIO_program.c:20:16:GPIO_SetPinMode	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/GPIO_program.c:55:16:GPIO_SetPinOutputType	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/GPIO_program.c:90:16:GPIO_SetPinOutputSpeed	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/GPIO_program.c:125:16:GPIO_SetPinPullUpDown	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/GPIO_program.c:160:16:GPIO_GetPinValue	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/GPIO_program.c:192:16:GPIO_SetPinValue	24	static

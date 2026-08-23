@@ -23,4 +23,19 @@ Std_ReturnType EXTI_ClearPendingFlag(u8 Copy_Line);
 #define ON_CHANGE 2 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #endif /* EXTI_INTERFACE_H_ */

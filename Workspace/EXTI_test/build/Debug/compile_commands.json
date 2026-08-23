@@ -1,0 +1,50 @@
+[
+{
+  "directory": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/EXTI_test.dir/Src/syscall.c.obj -c /home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/syscall.c",
+  "file": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/syscall.c",
+  "output": "CMakeFiles/EXTI_test.dir/Src/syscall.c.obj"
+},
+{
+  "directory": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj -c /home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/sysmem.c",
+  "file": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/sysmem.c",
+  "output": "CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj"
+},
+{
+  "directory": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/EXTI_test.dir/Src/main.c.obj -c /home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/main.c",
+  "file": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/main.c",
+  "output": "CMakeFiles/EXTI_test.dir/Src/main.c.obj"
+},
+{
+  "directory": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj -c /home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/RCC_program.c",
+  "file": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/RCC_program.c",
+  "output": "CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj"
+},
+{
+  "directory": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj -c /home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/GPIO_program.c",
+  "file": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/GPIO_program.c",
+  "output": "CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj"
+},
+{
+  "directory": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj -c /home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c",
+  "file": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c",
+  "output": "CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj"
+},
+{
+  "directory": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj -c /home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/EXTI_program.c",
+  "file": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/EXTI_program.c",
+  "output": "CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj"
+},
+{
+  "directory": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Inc -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -x assembler-with-cpp -MMD -MP -o CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj -c /home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/startup_stm32f401xx.S",
+  "file": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/startup_stm32f401xx.S",
+  "output": "CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj"
+}
+]

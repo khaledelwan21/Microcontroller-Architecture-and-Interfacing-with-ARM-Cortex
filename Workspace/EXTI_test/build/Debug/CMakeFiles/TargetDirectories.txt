@@ -1,0 +1,3 @@
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug/CMakeFiles/EXTI_test.dir
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug/CMakeFiles/edit_cache.dir
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug/CMakeFiles/rebuild_cache.dir

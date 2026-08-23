@@ -16,10 +16,58 @@
  ******************************************************************************
  */
 
-#include <stdint.h>
+ /* Includes */
 
+ /******< LIB *****/
+#include "STD_TYPES.h"
+#include "BIT_MATH.h"
+/*******< MCAL******/
+#include "RCC_interface.h"
+#include "GPIO_interface.h"
+#include "EXTI_interface.h"
+#include "NVIC_interface.h"
+#include "EXTI_private.h"
 int main(void)
 {
+
+    /* Initialize system clock */
+    RCC_InitSysClock(); // Initialize system clock
+
+    /* Enable GPIO */
+    RCC_EnablePeripheralClock(RCC_AHB1_BUS,RCC_AHB1ENR_GPIOA_EN_BIT); // Enable clock
+    RCC_EnablePeripheralClock(RCC_AHB1_BUS,RCC_AHB1ENR_GPIOC_EN_BIT); // Enable clock
+
+    /* Enable Alternate function clock */
+    RCC_EnablePeripheralClock(RCC_APB2_BUS,RCC_APB2ENR_SYSCFGEN_BIT); // Enable clock
+
+    /* Enable EXTI from NVIC */
+     NVIC_EnableIRQ(6); // Enable EXTI0 interrupt in NVIC
+
+    /* Configure GPIO pin as input */
+    GPIO_SetPinMode(PORTA, GPIO_PIN_0, GPIO_MODE_INPUT); // Set PA0 as input
+    GPIO_SetPinPullUpDown(PORTA, GPIO_PIN_0, GPIO_PULL_UP_DOWN_PULL_UP); // Enable pull-up resistor for PA0
+
+    /* configure GPIO pin as output */
+    GPIO_SetPinMode(PORTC, GPIO_PIN_13, GPIO_MODE_OUTPUT); // Set PC13 as output
+    GPIO_SetPinOutputType(PORTC, GPIO_PIN_13, GPIO_OUTPUT_TYPE_PUSH_PULL); // Set PC13 as push-pull
+    GPIO_SetPinOutputSpeed(PORTC, GPIO_PIN_13, GPIO_OUTPUT_SPEED_LOW); //
+    GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH); // Set PC13 high (LED off)
+
+    /* Configure EXTI line */
+    EXTI_SelectPort(EXTI_LINE0, PORTA); // Select port A for EXTI line 0
+    EXTI_SetTrigger(EXTI_LINE0, FALLING_EDGE); // Set trigger to falling edge
+    EXTI_EnableLine(EXTI_LINE0); // Enable EXTI line 0
+
     /* Loop forever */
 	for(;;);
+}
+
+
+void EXTI0_IRQHandler(void)
+{
+    /* Clear pending flag */
+    EXTI_ClearPendingFlag(EXTI_LINE0); // Clear pending flag for EXTI line 0
+
+    /* Toggle LED */
+    TOG_BIT(GPIOC_ODR, GPIO_PIN_13); // Toggle PC13 (LED)
 }

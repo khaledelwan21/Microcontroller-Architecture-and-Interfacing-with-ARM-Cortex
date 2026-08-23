@@ -1,0 +1,8 @@
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c:20:17:NVIC_EnableIRQ	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c:49:17:NVIC_DisableIRQ	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c:78:17:NVIC_SetPendingIRQ	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c:106:17:NVIC_ClearPendingIRQ	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c:134:17:NVIC_GetPendingIRQ	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c:164:17:NVIC_GetActiveIRQ	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c:194:18:NVIC_SetPriority	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/NVIC_program.c:217:16:MCAL_NVIC_xGetPriority	24	static

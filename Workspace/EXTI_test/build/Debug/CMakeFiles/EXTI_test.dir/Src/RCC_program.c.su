@@ -1,0 +1,4 @@
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/RCC_program.c:21:13:RCC_EnableHSE	4	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/RCC_program.c:47:16:RCC_InitSysClock	16	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/RCC_program.c:138:16:RCC_EnablePeripheralClock	24	static
+/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/Src/RCC_program.c:184:16:RCC_DisablePeripheralClock	24	static
