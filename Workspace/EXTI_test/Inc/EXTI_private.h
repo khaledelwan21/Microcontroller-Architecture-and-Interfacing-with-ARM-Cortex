@@ -28,7 +28,7 @@
  #define SYSCFG_EXTICR ((volatile u32 *)(SYSCFG_BASE_ADDRESS + 0x08))
 
 
-#define ETI_LINES_Count 16
+#define EXTI_LINES_Count 16
 
 #define EXTI_LINE0 0
 #define EXTI_LINE1 1

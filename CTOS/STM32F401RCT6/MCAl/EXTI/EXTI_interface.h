@@ -15,7 +15,7 @@ Std_ReturnType EXTI_SetTrigger(u8 Copy_Line, u8 Copy_Trigger);
 Std_ReturnType EXTI_SelectPort(u8 Copy_Line, u8 Copy_Port);
 Std_ReturnType EXTI_SoftwareTrigger(u8 Copy_Line);
 Std_ReturnType EXTI_ClearPendingFlag(u8 Copy_Line);
-
+Std_ReturnType EXTI_SetCallBack(u8 Copy_Line, void (*Copy_CallBack)(void));
 
 
 #define RISING_EDGE 0

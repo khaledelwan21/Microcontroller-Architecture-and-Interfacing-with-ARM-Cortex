@@ -655,7 +655,7 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 0x08000000                g_pfnVectors
                 0x08000194                        . = ALIGN (0x4)
 
-.text           0x08000194      0xdd0
+.text           0x08000194      0xf78
                 0x08000194                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000194       0x40 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -679,192 +679,210 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  .text.__register_exitproc
                 0x08000274       0x80 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__atexit.o)
                 0x08000274                __register_exitproc
- .text.main     0x080002f4       0x7c CMakeFiles/EXTI_test.dir/Src/main.c.obj
-                0x080002f4                main
- .text.EXTI0_IRQHandler
-                0x08000370       0x20 CMakeFiles/EXTI_test.dir/Src/main.c.obj
-                0x08000370                EXTI0_IRQHandler
+ .text.toggleLED
+                0x080002f4       0x20 CMakeFiles/EXTI_test.dir/Src/main.c.obj
+                0x080002f4                toggleLED
+ .text.main     0x08000314       0x88 CMakeFiles/EXTI_test.dir/Src/main.c.obj
+                0x08000314                main
  .text.RCC_InitSysClock
-                0x08000390       0xec CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
-                0x08000390                RCC_InitSysClock
+                0x0800039c       0xec CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
+                0x0800039c                RCC_InitSysClock
  .text.RCC_EnablePeripheralClock
-                0x0800047c       0xbc CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
-                0x0800047c                RCC_EnablePeripheralClock
+                0x08000488       0xbc CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
+                0x08000488                RCC_EnablePeripheralClock
  .text.GPIO_SetPinMode
-                0x08000538      0x154 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
-                0x08000538                GPIO_SetPinMode
+                0x08000544      0x154 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+                0x08000544                GPIO_SetPinMode
  .text.GPIO_SetPinOutputType
-                0x0800068c      0x140 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
-                0x0800068c                GPIO_SetPinOutputType
+                0x08000698      0x140 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+                0x08000698                GPIO_SetPinOutputType
  .text.GPIO_SetPinOutputSpeed
-                0x080007cc      0x154 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
-                0x080007cc                GPIO_SetPinOutputSpeed
+                0x080007d8      0x154 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+                0x080007d8                GPIO_SetPinOutputSpeed
  .text.GPIO_SetPinPullUpDown
-                0x08000920      0x154 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
-                0x08000920                GPIO_SetPinPullUpDown
+                0x0800092c      0x154 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+                0x0800092c                GPIO_SetPinPullUpDown
  .text.GPIO_SetPinValue
-                0x08000a74      0x194 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
-                0x08000a74                GPIO_SetPinValue
+                0x08000a80      0x194 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+                0x08000a80                GPIO_SetPinValue
  .text.NVIC_EnableIRQ
-                0x08000c08       0x88 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
-                0x08000c08                NVIC_EnableIRQ
+                0x08000c14       0x88 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
+                0x08000c14                NVIC_EnableIRQ
  .text.EXTI_EnableLine
-                0x08000c90       0x40 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
-                0x08000c90                EXTI_EnableLine
+                0x08000c9c       0x40 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000c9c                EXTI_EnableLine
  .text.EXTI_SetTrigger
-                0x08000cd0       0xd0 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
-                0x08000cd0                EXTI_SetTrigger
+                0x08000cdc       0xd0 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000cdc                EXTI_SetTrigger
  .text.EXTI_SelectPort
-                0x08000da0      0x118 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
-                0x08000da0                EXTI_SelectPort
+                0x08000dac      0x118 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000dac                EXTI_SelectPort
  .text.EXTI_ClearPendingFlag
-                0x08000eb8       0x40 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
-                0x08000eb8                EXTI_ClearPendingFlag
+                0x08000ec4       0x40 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000ec4                EXTI_ClearPendingFlag
+ .text.EXTI_SetCallBack
+                0x08000f04       0x44 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000f04                EXTI_SetCallBack
+ .text.EXTI0_IRQHandler
+                0x08000f48       0x20 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000f48                EXTI0_IRQHandler
+ .text.EXTI1_IRQHandler
+                0x08000f68       0x20 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000f68                EXTI1_IRQHandler
+ .text.EXTI2_IRQHandler
+                0x08000f88       0x20 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000f88                EXTI2_IRQHandler
+ .text.EXTI3_IRQHandler
+                0x08000fa8       0x20 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000fa8                EXTI3_IRQHandler
+ .text.EXTI4_IRQHandler
+                0x08000fc8       0x20 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000fc8                EXTI4_IRQHandler
+ .text.EXTI9_5_IRQHandler
+                0x08000fe8       0x5c CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08000fe8                EXTI9_5_IRQHandler
+ .text.EXTI15_10_IRQHandler
+                0x08001044       0x5c CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x08001044                EXTI15_10_IRQHandler
  .text.Reset_Handler
-                0x08000ef8       0x50 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
-                0x08000ef8                Reset_Handler
+                0x080010a0       0x50 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+                0x080010a0                Reset_Handler
  .text.Default_Handler
-                0x08000f48        0x2 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
-                0x08000f48                EXTI2_IRQHandler
-                0x08000f48                DebugMon_Handler
-                0x08000f48                SPI4_IRQHandler
-                0x08000f48                TIM1_CC_IRQHandler
-                0x08000f48                DMA2_Stream5_IRQHandler
-                0x08000f48                HardFault_Handler
-                0x08000f48                DMA1_Stream5_IRQHandler
-                0x08000f48                SysTick_Handler
-                0x08000f48                SDIO_IRQHandler
-                0x08000f48                TAMP_STAMP_IRQHandler
-                0x08000f48                PendSV_Handler
-                0x08000f48                NMI_Handler
-                0x08000f48                EXTI3_IRQHandler
-                0x08000f48                TIM1_UP_TIM10_IRQHandler
-                0x08000f48                I2C3_ER_IRQHandler
-                0x08000f48                EXTI18_OTG_FS_WKUP_IRQHandler
-                0x08000f48                I2C2_EV_IRQHandler
-                0x08000f48                DMA1_Stream2_IRQHandler
-                0x08000f48                UsageFault_Handler
-                0x08000f48                DMA2_Stream2_IRQHandler
-                0x08000f48                SPI1_IRQHandler
-                0x08000f48                TIM1_BRK_TIM9_IRQHandler
-                0x08000f48                DMA2_Stream3_IRQHandler
-                0x08000f48                USART6_IRQHandler
-                0x08000f48                DMA2_Stream0_IRQHandler
-                0x08000f48                TIM4_IRQHandler
-                0x08000f48                I2C1_EV_IRQHandler
-                0x08000f48                DMA1_Stream6_IRQHandler
-                0x08000f48                DMA1_Stream1_IRQHandler
-                0x08000f48                TIM3_IRQHandler
-                0x08000f48                RCC_IRQHandler
-                0x08000f48                Default_Handler
-                0x08000f48                EXTI15_10_IRQHandler
-                0x08000f48                ADC_IRQHandler
-                0x08000f48                DMA1_Stream7_IRQHandler
-                0x08000f48                TIM5_IRQHandler
-                0x08000f48                DMA2_Stream7_IRQHandler
-                0x08000f48                I2C3_EV_IRQHandler
-                0x08000f48                EXTI9_5_IRQHandler
-                0x08000f48                SPI2_IRQHandler
-                0x08000f48                MemManage_Handler
-                0x08000f48                DMA1_Stream0_IRQHandler
-                0x08000f48                SVC_Handler
-                0x08000f48                EXTI4_IRQHandler
-                0x08000f48                EXTI22_RTC_WKUP_IRQHandler
-                0x08000f48                TIM2_IRQHandler
-                0x08000f48                EXTI16_PVD_IRQHandler
-                0x08000f48                TIM1_TRG_COM_TIM11_IRQHandler
-                0x08000f48                EXTI1_IRQHandler
-                0x08000f48                EXTI17_RTC_Alarm_IRQHandler
-                0x08000f48                USART2_IRQHandler
-                0x08000f48                I2C2_ER_IRQHandler
-                0x08000f48                DMA2_Stream1_IRQHandler
-                0x08000f48                FLASH_IRQHandler
-                0x08000f48                DMA2_Stream4_IRQHandler
-                0x08000f48                BusFault_Handler
-                0x08000f48                USART1_IRQHandler
-                0x08000f48                OTG_FS_IRQHandler
-                0x08000f48                SPI3_IRQHandler
-                0x08000f48                DMA1_Stream4_IRQHandler
-                0x08000f48                I2C1_ER_IRQHandler
-                0x08000f48                DMA2_Stream6_IRQHandler
-                0x08000f48                DMA1_Stream3_IRQHandler
+                0x080010f0        0x2 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+                0x080010f0                DebugMon_Handler
+                0x080010f0                SPI4_IRQHandler
+                0x080010f0                TIM1_CC_IRQHandler
+                0x080010f0                DMA2_Stream5_IRQHandler
+                0x080010f0                HardFault_Handler
+                0x080010f0                DMA1_Stream5_IRQHandler
+                0x080010f0                SysTick_Handler
+                0x080010f0                SDIO_IRQHandler
+                0x080010f0                TAMP_STAMP_IRQHandler
+                0x080010f0                PendSV_Handler
+                0x080010f0                NMI_Handler
+                0x080010f0                TIM1_UP_TIM10_IRQHandler
+                0x080010f0                I2C3_ER_IRQHandler
+                0x080010f0                EXTI18_OTG_FS_WKUP_IRQHandler
+                0x080010f0                I2C2_EV_IRQHandler
+                0x080010f0                DMA1_Stream2_IRQHandler
+                0x080010f0                UsageFault_Handler
+                0x080010f0                DMA2_Stream2_IRQHandler
+                0x080010f0                SPI1_IRQHandler
+                0x080010f0                TIM1_BRK_TIM9_IRQHandler
+                0x080010f0                DMA2_Stream3_IRQHandler
+                0x080010f0                USART6_IRQHandler
+                0x080010f0                DMA2_Stream0_IRQHandler
+                0x080010f0                TIM4_IRQHandler
+                0x080010f0                I2C1_EV_IRQHandler
+                0x080010f0                DMA1_Stream6_IRQHandler
+                0x080010f0                DMA1_Stream1_IRQHandler
+                0x080010f0                TIM3_IRQHandler
+                0x080010f0                RCC_IRQHandler
+                0x080010f0                Default_Handler
+                0x080010f0                ADC_IRQHandler
+                0x080010f0                DMA1_Stream7_IRQHandler
+                0x080010f0                TIM5_IRQHandler
+                0x080010f0                DMA2_Stream7_IRQHandler
+                0x080010f0                I2C3_EV_IRQHandler
+                0x080010f0                SPI2_IRQHandler
+                0x080010f0                MemManage_Handler
+                0x080010f0                DMA1_Stream0_IRQHandler
+                0x080010f0                SVC_Handler
+                0x080010f0                EXTI22_RTC_WKUP_IRQHandler
+                0x080010f0                TIM2_IRQHandler
+                0x080010f0                EXTI16_PVD_IRQHandler
+                0x080010f0                TIM1_TRG_COM_TIM11_IRQHandler
+                0x080010f0                EXTI17_RTC_Alarm_IRQHandler
+                0x080010f0                USART2_IRQHandler
+                0x080010f0                I2C2_ER_IRQHandler
+                0x080010f0                DMA2_Stream1_IRQHandler
+                0x080010f0                FLASH_IRQHandler
+                0x080010f0                DMA2_Stream4_IRQHandler
+                0x080010f0                BusFault_Handler
+                0x080010f0                USART1_IRQHandler
+                0x080010f0                OTG_FS_IRQHandler
+                0x080010f0                SPI3_IRQHandler
+                0x080010f0                DMA1_Stream4_IRQHandler
+                0x080010f0                I2C1_ER_IRQHandler
+                0x080010f0                DMA2_Stream6_IRQHandler
+                0x080010f0                DMA1_Stream3_IRQHandler
  *(.glue_7)
- .glue_7        0x08000f4a        0x0 linker stubs
+ .glue_7        0x080010f2        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08000f4a        0x0 linker stubs
+ .glue_7t       0x080010f2        0x0 linker stubs
  *(.eh_frame)
- *fill*         0x08000f4a        0x2 
- .eh_frame      0x08000f4c        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ *fill*         0x080010f2        0x2 
+ .eh_frame      0x080010f4        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x08000f4c        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08000f4c                _init
- .init          0x08000f50        0x8 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x080010f4        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x080010f4                _init
+ .init          0x080010f8        0x8 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x08000f58        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08000f58                _fini
- .fini          0x08000f5c        0x8 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x08000f64                        . = ALIGN (0x4)
-                0x08000f64                        _etext = .
+ .fini          0x08001100        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08001100                _fini
+ .fini          0x08001104        0x8 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x0800110c                        . = ALIGN (0x4)
+                0x0800110c                        _etext = .
 
-.vfp11_veneer   0x08000f64        0x0
- .vfp11_veneer  0x08000f64        0x0 linker stubs
+.vfp11_veneer   0x0800110c        0x0
+ .vfp11_veneer  0x0800110c        0x0 linker stubs
 
-.v4_bx          0x08000f64        0x0
- .v4_bx         0x08000f64        0x0 linker stubs
+.v4_bx          0x0800110c        0x0
+ .v4_bx         0x0800110c        0x0 linker stubs
 
-.iplt           0x08000f64        0x0
- .iplt          0x08000f64        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x0800110c        0x0
+ .iplt          0x0800110c        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08000f64        0x0
-                0x08000f64                        . = ALIGN (0x4)
+.rodata         0x0800110c        0x0
+                0x0800110c                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
-                0x08000f64                        . = ALIGN (0x4)
+                0x0800110c                        . = ALIGN (0x4)
 
-.ARM.extab      0x08000f64        0x0
-                0x08000f64                        . = ALIGN (0x4)
+.ARM.extab      0x0800110c        0x0
+                0x0800110c                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08000f64                        . = ALIGN (0x4)
+                0x0800110c                        . = ALIGN (0x4)
 
-.ARM            0x08000f64        0x0
-                0x08000f64                        . = ALIGN (0x4)
-                0x08000f64                        __exidx_start = .
+.ARM            0x0800110c        0x0
+                0x0800110c                        . = ALIGN (0x4)
+                0x0800110c                        __exidx_start = .
  *(.ARM.exidx*)
-                0x08000f64                        __exidx_end = .
-                0x08000f64                        . = ALIGN (0x4)
+                0x0800110c                        __exidx_end = .
+                0x0800110c                        . = ALIGN (0x4)
 
-.preinit_array  0x08000f64        0x0
-                0x08000f64                        . = ALIGN (0x4)
-                0x08000f64                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800110c        0x0
+                0x0800110c                        . = ALIGN (0x4)
+                0x0800110c                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08000f64                        PROVIDE (__preinit_array_end = .)
-                0x08000f64                        . = ALIGN (0x4)
+                0x0800110c                        PROVIDE (__preinit_array_end = .)
+                0x0800110c                        . = ALIGN (0x4)
 
-.init_array     0x08000f64        0x8
-                0x08000f64                        . = ALIGN (0x4)
-                0x08000f64                        PROVIDE (__init_array_start = .)
+.init_array     0x0800110c        0x8
+                0x0800110c                        . = ALIGN (0x4)
+                0x0800110c                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x08000f64        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
+                0x0800110c        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x08000f68        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08000f6c                        PROVIDE (__init_array_end = .)
-                0x08000f6c                        . = ALIGN (0x4)
+ .init_array    0x08001110        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08001114                        PROVIDE (__init_array_end = .)
+                0x08001114                        . = ALIGN (0x4)
 
-.fini_array     0x08000f6c        0x4
-                0x08000f6c                        . = ALIGN (0x4)
-                0x08000f6c                        PROVIDE (__fini_array_start = .)
+.fini_array     0x08001114        0x4
+                0x08001114                        . = ALIGN (0x4)
+                0x08001114                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08000f6c        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08000f70                        PROVIDE (__fini_array_end = .)
-                0x08000f70                        . = ALIGN (0x4)
-                0x08000f70                        _sidata = LOADADDR (.data)
+ .fini_array    0x08001114        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x08001118                        PROVIDE (__fini_array_end = .)
+                0x08001118                        . = ALIGN (0x4)
+                0x08001118                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x08000f70        0x0
- .rel.iplt      0x08000f70        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x08001118        0x0
+ .rel.iplt      0x08001118        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000        0x4 load address 0x08000f70
+.data           0x20000000        0x4 load address 0x08001118
                 0x20000000                        _sdata = .
  *(.data)
  *(.data*)
@@ -875,10 +893,10 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  *(.RamFunc*)
                 0x20000004                        . = ALIGN (0x4)
 
-.igot.plt       0x20000004        0x0 load address 0x08000f74
+.igot.plt       0x20000004        0x0 load address 0x0800111c
  .igot.plt      0x20000004        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.tdata          0x20000004        0x0 load address 0x08000f74
+.tdata          0x20000004        0x0 load address 0x0800111c
  *(.tdata .tdata.* .gnu.linkonce.td.*)
                 0x20000004                        . = ALIGN (0x4)
                 0x20000004                        _edata = .
@@ -895,7 +913,7 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 [!provide]                        PROVIDE (__data_source_end = __tdata_source_end)
                 [!provide]                        PROVIDE (__data_source_size = (__data_source_end - __data_source))
 
-.tbss           0x20000004        0x0 load address 0x08000f74
+.tbss           0x20000004        0x0 load address 0x0800111c
                 0x20000004                        _sbss = .
                 0x20000004                        __bss_start__ = _sbss
                 [!provide]                        PROVIDE (__bss_start = .)
@@ -913,7 +931,7 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 [!provide]                        PROVIDE (__arm32_tls_tcb_offset = MAX (0x8, __tls_align))
                 [!provide]                        PROVIDE (__arm64_tls_tcb_offset = MAX (0x10, __tls_align))
 
-.bss            0x20000004      0x1b4 load address 0x08000f74
+.bss            0x20000004      0x1f4 load address 0x0800111c
  *(.bss)
  .bss           0x20000004       0x1c /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.bss*)
@@ -926,24 +944,26 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  .bss.__atexit0
                 0x20000028      0x190 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__atexit.o)
                 0x20000028                __atexit0
+ .bss.EXTI_CallBack
+                0x200001b8       0x40 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
  *(COMMON)
-                0x200001b8                        . = ALIGN (0x4)
-                0x200001b8                        _ebss = .
-                0x200001b8                        __bss_end__ = _ebss
+                0x200001f8                        . = ALIGN (0x4)
+                0x200001f8                        _ebss = .
+                0x200001f8                        __bss_end__ = _ebss
                 [!provide]                        PROVIDE (__bss_end = .)
                 [!provide]                        PROVIDE (__bss_size = (__bss_end - __bss_start))
                 [!provide]                        PROVIDE (__non_tls_bss_start = ADDR (.bss))
 
 ._user_heap_stack
-                0x200001b8      0x600 load address 0x08000f74
-                0x200001b8                        . = ALIGN (0x8)
+                0x200001f8      0x600 load address 0x0800111c
+                0x200001f8                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
-                0x200001b8                        PROVIDE (_end = .)
-                0x200003b8                        . = (. + _Min_Heap_Size)
- *fill*         0x200001b8      0x200 
-                0x200007b8                        . = (. + _Min_Stack_Size)
- *fill*         0x200003b8      0x400 
-                0x200007b8                        . = ALIGN (0x8)
+                0x200001f8                        PROVIDE (_end = .)
+                0x200003f8                        . = (. + _Min_Heap_Size)
+ *fill*         0x200001f8      0x200 
+                0x200007f8                        . = (. + _Min_Stack_Size)
+ *fill*         0x200003f8      0x400 
+                0x200007f8                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a:*(*)
@@ -986,7 +1006,7 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
 OUTPUT(EXTI_test.elf elf32-littlearm)
 LOAD linker stubs
 
-.debug_frame    0x00000000      0x57c
+.debug_frame    0x00000000      0x674
  .debug_frame   0x00000000       0x2c /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-init.o)
  .debug_frame   0x0000002c       0xb0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-lock.o)
  .debug_frame   0x000000dc       0x5c /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
@@ -997,25 +1017,25 @@ LOAD linker stubs
  .debug_frame   0x00000208       0x98 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
  .debug_frame   0x000002a0       0xe8 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
  .debug_frame   0x00000388      0x130 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
- .debug_frame   0x000004b8       0xc4 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+ .debug_frame   0x000004b8      0x1bc CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
 
-.debug_info     0x00000000      0xa88
- .debug_info    0x00000000      0x20a CMakeFiles/EXTI_test.dir/Src/main.c.obj
- .debug_info    0x0000020a      0x153 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
- .debug_info    0x0000035d      0x27b CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
- .debug_info    0x000005d8      0x2aa CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
- .debug_info    0x00000882      0x1d6 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
- .debug_info    0x00000a58       0x30 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+.debug_info     0x00000000      0xba3
+ .debug_info    0x00000000      0x216 CMakeFiles/EXTI_test.dir/Src/main.c.obj
+ .debug_info    0x00000216      0x153 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
+ .debug_info    0x00000369      0x27b CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+ .debug_info    0x000005e4      0x2aa CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
+ .debug_info    0x0000088e      0x2e5 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+ .debug_info    0x00000b73       0x30 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
 
-.debug_abbrev   0x00000000      0x38e
- .debug_abbrev  0x00000000       0xb3 CMakeFiles/EXTI_test.dir/Src/main.c.obj
- .debug_abbrev  0x000000b3       0xa7 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
- .debug_abbrev  0x0000015a       0xb4 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
- .debug_abbrev  0x0000020e       0xb2 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
- .debug_abbrev  0x000002c0       0xaa CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
- .debug_abbrev  0x0000036a       0x24 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+.debug_abbrev   0x00000000      0x414
+ .debug_abbrev  0x00000000       0xc3 CMakeFiles/EXTI_test.dir/Src/main.c.obj
+ .debug_abbrev  0x000000c3       0xa7 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
+ .debug_abbrev  0x0000016a       0xb4 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+ .debug_abbrev  0x0000021e       0xb2 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
+ .debug_abbrev  0x000002d0      0x120 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+ .debug_abbrev  0x000003f0       0x24 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
 
-.debug_aranges  0x00000000      0x168
+.debug_aranges  0x00000000      0x1a8
  .debug_aranges
                 0x00000000       0x28 CMakeFiles/EXTI_test.dir/Src/main.c.obj
  .debug_aranges
@@ -1025,24 +1045,24 @@ LOAD linker stubs
  .debug_aranges
                 0x000000a8       0x58 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
  .debug_aranges
-                0x00000100       0x40 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x00000100       0x80 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
  .debug_aranges
-                0x00000140       0x28 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+                0x00000180       0x28 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
 
 .debug_rnglists
-                0x00000000      0x101
+                0x00000000      0x132
  .debug_rnglists
-                0x00000000       0x19 CMakeFiles/EXTI_test.dir/Src/main.c.obj
+                0x00000000       0x1a CMakeFiles/EXTI_test.dir/Src/main.c.obj
  .debug_rnglists
-                0x00000019       0x28 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
+                0x0000001a       0x28 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
  .debug_rnglists
-                0x00000041       0x37 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+                0x00000042       0x37 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
  .debug_rnglists
-                0x00000078       0x43 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
+                0x00000079       0x43 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
  .debug_rnglists
-                0x000000bb       0x2d CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+                0x000000bc       0x5d CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
  .debug_rnglists
-                0x000000e8       0x19 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+                0x00000119       0x19 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
 
 .debug_macro    0x00000000      0x7ec
  .debug_macro   0x00000000       0x8e CMakeFiles/EXTI_test.dir/Src/main.c.obj
@@ -1061,22 +1081,22 @@ LOAD linker stubs
  .debug_macro   0x0000078e       0x16 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
  .debug_macro   0x000007a4       0x48 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
 
-.debug_line     0x00000000     0x11c5
- .debug_line    0x00000000      0x218 CMakeFiles/EXTI_test.dir/Src/main.c.obj
- .debug_line    0x00000218      0x2ad CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
- .debug_line    0x000004c5      0x626 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
- .debug_line    0x00000aeb      0x3b7 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
- .debug_line    0x00000ea2      0x2a8 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
- .debug_line    0x0000114a       0x7b CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+.debug_line     0x00000000     0x132b
+ .debug_line    0x00000000      0x217 CMakeFiles/EXTI_test.dir/Src/main.c.obj
+ .debug_line    0x00000217      0x2ad CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
+ .debug_line    0x000004c4      0x626 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+ .debug_line    0x00000aea      0x3b7 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
+ .debug_line    0x00000ea1      0x40f CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+ .debug_line    0x000012b0       0x7b CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
 
-.debug_str      0x00000000     0x5614
- .debug_str     0x00000000     0x5614 CMakeFiles/EXTI_test.dir/Src/main.c.obj
-                               0x516d (size before relaxing)
- .debug_str     0x00005614     0x3a70 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
- .debug_str     0x00005614     0x4060 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
- .debug_str     0x00005614     0x36ce CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
- .debug_str     0x00005614     0x42f3 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
- .debug_str     0x00005614      0x116 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+.debug_str      0x00000000     0x56b8
+ .debug_str     0x00000000     0x56b8 CMakeFiles/EXTI_test.dir/Src/main.c.obj
+                               0x5162 (size before relaxing)
+ .debug_str     0x000056b8     0x3a70 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
+ .debug_str     0x000056b8     0x4060 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+ .debug_str     0x000056b8     0x36ce CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
+ .debug_str     0x000056b8     0x439e CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+ .debug_str     0x000056b8      0x116 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 CMakeFiles/EXTI_test.dir/Src/main.c.obj
