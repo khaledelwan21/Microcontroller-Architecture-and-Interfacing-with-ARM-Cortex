@@ -150,6 +150,11 @@
 #define RCC_CRYSTAL_CLK                      1
 
 
+#define HSI_VALUE 16000000U /**< HSI frequency in Hz */
+#define HSE_VALUE 8000000U  /**< HSE frequency in Hz */
+
+
+
 #define FLASH_ACR (*(volatile unsigned int*)0x40023C00)
 
 #endif /* RCC_PRIVATE_H */

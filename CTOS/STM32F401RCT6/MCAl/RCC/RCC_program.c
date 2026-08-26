@@ -221,3 +221,42 @@ Std_ReturnType RCC_DisablePeripheralClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralI
     return Local_FunctionState;
 
 }
+
+Std_ReturnType RCC_GetFrequency(u32 *Copy_pu32Frequency)
+{
+    Std_ReturnType Local_FunctionState = E_NOT_OK;
+
+    if (Copy_pu32Frequency == NULL)
+    {
+        return Local_FunctionState; // Return error if the pointer is NULL
+    }
+
+    u32 Local_u32SystemClock = 0;
+
+    // Determine the system clock source
+    u32 Local_u32ClockSource = (RCC_CFGR >> RCC_CFGR_SWS_BITS) & 0x03;
+
+    switch (Local_u32ClockSource)
+    {
+        case RCC_HSI:
+            Local_u32SystemClock = HSI_VALUE; // HSI frequency
+            break;
+
+        case RCC_HSE:
+            Local_u32SystemClock = HSE_VALUE; // HSE frequency
+            break;
+
+        case RCC_PLL:
+
+            Local_u32SystemClock = (u32)(((u64)PLLInputClock * PLLN) / (PLLM * PLLP));; // Calculate PLL output frequency based on configuration
+            break;
+
+        default:
+            return Local_FunctionState; // Invalid clock source
+    }
+
+    *Copy_pu32Frequency = Local_u32SystemClock;
+    Local_FunctionState = E_OK;
+
+    return Local_FunctionState;
+}
