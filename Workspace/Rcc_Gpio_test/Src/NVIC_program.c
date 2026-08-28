@@ -191,21 +191,21 @@
     return Local_FunctionState;
  } 
  
-  Std_ReturnType NVIC_SetPriority(IRQn_Type Copy_IRQn, u8 Copy_GroupPriorit, u8 Copy_SubPriorit, u8 Copy_priority  ) 
+  Std_ReturnType NVIC_SetPriority(IRQn_Type Copy_IRQn, u8 Copy_GroupPriorit, u8 Copy_SubPriorit) 
  {
 	  Std_ReturnType Local_FunctionState = E_NOT_OK;
       
     #if (PRIORITY_GROUPING == _0GROUP_16SUB   || PRIORITY_GROUPING == _1GROUP_8SUB || PRIORITY_GROUPING == _2GROUP_4SUB || PRIORITY_GROUPING == _3GROUP_2SUB || PRIORITY_GROUPING == _0GROUP_16SUB)
       
         u8 Local_Priority = (Copy_SubPriorit  | (Copy_GroupPriorit << ((PRIORITY_GROUPING - 0x05FA0300)/0x100)));
-    if (Copy_IRQn >= NUM_OF_INTERUPTS || (Copy_priority > 15)) 
+    if (Copy_IRQn >= NUM_OF_INTERUPTS || Local_Priority > 15) 
     {
         return Local_FunctionState; // Invalid IRQ number or priority
     }   
     else 
     {          
 		NVIC_IPR_Base_Address[Copy_IRQn] = (Local_Priority << 4); // Set the priority in the corresponding IPR register
-        SCB_AIRCR =  _0GROUP_16SUB ; // Set the priority grouping to 4 bits for pre-emption priority and 0 bits for subpriority
+        SCB_AIRCR =  PRIORITY_GROUPING ; // Set the priority grouping to 4 bits for pre-emption priority and 0 bits for subpriority
         Local_FunctionState = E_OK;
     }
     #else

@@ -26,5 +26,7 @@ Std_ReturnType RCC_EnablePeripheralClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId
 
 Std_ReturnType RCC_DisablePeripheralClock(u8 Copy_u8BusId, u8 Copy_u8PeripheralId);
 
+Std_ReturnType RCC_GetFrequency(u32 *Copy_pu32Frequency);
+
 #endif /* RCC_INTERFACE_H */   
  

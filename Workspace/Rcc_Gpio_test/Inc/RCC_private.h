@@ -20,7 +20,7 @@
 
 
 
-#define RCC_BASE_ADDRESS            0x40023800
+#define RCC_BASE_ADDRESS            0x40023800U
 #define RCC_CR                      (*(volatile u32*)(RCC_BASE_ADDRESS + 0x00))
 #define RCC_PLLCFGR                 (*(volatile u32*)(RCC_BASE_ADDRESS + 0x04))
 #define RCC_CFGR                    (*(volatile u32*)(RCC_BASE_ADDRESS + 0x08))
@@ -120,6 +120,19 @@
 #define RCC_APB1ENR_TIM3EN_BIT           1
 #define RCC_APB1ENR_TIM2EN_BIT           0
 
+
+#/**
+ * @defgroup RCC_APB2ENR_BITS APB2 Peripheral Clock Enable Bits
+ * @brief Bits used to enable the clocks for peripherals connected to the APB2 bus in
+ */
+#define RCC_APB2ENR_TIM11EN_BIT          18
+#define RCC_APB2ENR_TIM10EN_BIT          17
+#define RCC_APB2ENR_TIM9EN_BIT           16
+#define RCC_APB2ENR_SYSCFGEN_BIT         14
+#define RCC_APB2ENR_SPI1EN_BIT           12
+#define RCC_APB2ENR_USART6EN_BIT         5
+#define RCC_APB2ENR_USART1EN_BIT         4
+#define RCC_APB2ENR_TIM1EN_BIT           0
 /**
  * @defgroup RCC_SYS_CLK_SOURCES System Clock Sources
  * @brief Constants used to select the system clock source in the RCC_CFGR register.
@@ -135,6 +148,11 @@
  */
 #define RCC_RC_CLK                           0
 #define RCC_CRYSTAL_CLK                      1
+
+
+#define HSI_VALUE 16000000U /**< HSI frequency in Hz */
+#define HSE_VALUE 8000000U  /**< HSE frequency in Hz */
+
 
 
 #define FLASH_ACR (*(volatile unsigned int*)0x40023C00)

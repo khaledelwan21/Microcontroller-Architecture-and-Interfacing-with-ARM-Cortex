@@ -25,7 +25,7 @@
  
  Std_ReturnType NVIC_GetActiveIRQ(IRQn_Type Copy_IRQn,u8 *Copy_ReturnActiveFlag) ;
 
- Std_ReturnType NVIC_SetPriority(IRQn_Type Copy_IRQn, u8 Copy_GroupPriorit, u8 Copy_SubPriorit, u8 Copy_priority) ;
+ Std_ReturnType NVIC_SetPriority(IRQn_Type Copy_IRQn, u8 Copy_GroupPriorit, u8 Copy_SubPriorit) ;
  
  Std_ReturnType MCAL_NVIC_xGetPriority(IRQn_Type Copy_IRQn, u8 *Copy_Priority) ;
  
