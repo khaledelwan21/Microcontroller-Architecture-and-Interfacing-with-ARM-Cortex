@@ -18,8 +18,12 @@
 
 
 /***************************, Global Variables ******************** */
-static void (*pf)(void) = NULL;
+static void (*pf_Single)(void)   = NULL;
+static u32  g_u32TargetTime_Single = 0;
 static volatile u32 g_u32MsTicks = 0;
+static void (*pf_Periodic)(void) = NULL;
+static u32  g_u32Interval_Periodic   = 0;
+static u32  g_u32TargetTime_Periodic = 0;
 
 /***************************< Functions *****************************/
 void STK_voidInit(void)
@@ -120,10 +124,10 @@ u32 STK_delay_ms(u32 Copy_u32DelayTime_ms)
 {
     u32 Local_StartTime = STK_Millis(); // Get current time
     
-while ((STK_Millis() - Local_StartTime) < Copy_u32DelayTime_ms)  // Wait until the specified delay time is reached
-    {
-         __WFI(); // Wait for interrupt
-    }
+    while ((STK_Millis() - Local_StartTime) < Copy_u32DelayTime_ms)  // Wait until the specified delay time is reached
+        {
+             __WFI(); // Wait for interrupt
+        }
 
     return 0;
 }
@@ -133,26 +137,33 @@ u32 STK_Millis(void)
     return g_u32MsTicks;
 }
 
-/*Std_ReturnType STK_SetIntervalSingle(void (*Copy_CallBackFunc)(void), u32 Copy_u32DelayTime_ms)
+Std_ReturnType STK_SetIntervalSingle(void (*Copy_CallBackFunc)(void), u32 Copy_u32DelayTime_ms)
 {
-    pf = Copy_CallBackFunc;
-    STK_delay_ms(Copy_u32DelayTime_ms);
+    pf_Single = Copy_CallBackFunc;
+    g_u32TargetTime_Single = STK_Millis() + Copy_u32DelayTime_ms; 
     return E_OK;
 }
 
 Std_ReturnType STK_SetIntervalPeriodic(void (*Copy_CallBackFunc)(void), u32 Copy_u32DelayTime_ms)
 {
-    pf = Copy_CallBackFunc;
-    STK_delay_ms(Copy_u32DelayTime_ms);
+    pf_Periodic = Copy_CallBackFunc ;
+    g_u32Interval_Periodic = Copy_u32DelayTime_ms;  
+    g_u32TargetTime_Periodic = STK_Millis() + Copy_u32DelayTime_ms ; 
     return E_OK;
 }
-*/
+
 void SysTick_Handler(void)
 {
     g_u32MsTicks++;
 
-    if (pf != NULL)
+    if (pf_Single != NULL && g_u32MsTicks >= g_u32TargetTime_Single)
     {
-        pf();
+        pf_Single();
+        pf_Single = NULL;
+    }
+    if( pf_Periodic != NULL && g_u32MsTicks >= g_u32TargetTime_Periodic)
+    {
+        pf_Periodic();
+        g_u32TargetTime_Periodic = g_u32MsTicks + g_u32Interval_Periodic; 
     }
 }

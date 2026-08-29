@@ -17,11 +17,15 @@
  */
 
 #include <stdint.h>
+#include <BIT_MATH.h>
 #include "RCC_interface.h"
 #include "GPIO_interface.h"
 #include "STK_interface.h"
 
-
+void TogglePin(void)
+{
+ TOG_BIT(GPIOC_ODR, GPIO_PIN_13); 
+}
 int main(void)
 {
 
@@ -44,24 +48,11 @@ int main(void)
 
 /************< STK >*************/
  STK_voidInit();
-
+ STK_SetIntervalSingle(TogglePin, 1000);
  /* Loop forever */
 
     while (1) 
     {
-  
-/* GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH);
- STK_delay_ms(2000);
- GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_LOW);
- STK_delay_ms(2000);*/
 
-      if(STK_Millis() %4000 <2000)
-      {
-          GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH);
-      }
-      else
-      {
-          GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_LOW);
-      }
     }
 }

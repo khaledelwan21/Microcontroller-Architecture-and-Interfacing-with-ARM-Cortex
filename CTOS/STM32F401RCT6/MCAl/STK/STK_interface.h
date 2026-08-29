@@ -11,9 +11,7 @@
 
 void STK_voidInit(void);
 
-
 void STK_Stop(void);
-
 
 void STK_Reset(void);
 
@@ -30,5 +28,7 @@ u32  STK_Millis(void);
 Std_ReturnType STK_SetIntervalSingle(void (*Copy_CallBackFunc)(void), u32 Copy_u32DelayTime_ms);
 
 Std_ReturnType STK_SetIntervalPeriodic(void (*Copy_CallBackFunc)(void), u32 Copy_u32DelayTime_ms);
+
+
 
 #endif
