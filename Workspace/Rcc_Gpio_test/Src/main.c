@@ -41,6 +41,13 @@ int main(void)
  GPIO_SetPinOutputSpeed(PORTC, GPIO_PIN_13, GPIO_OUTPUT_SPEED_LOW);
  GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH);
 
+/******<< GPIOA 7 *****/
+
+ GPIO_SetPinMode(PORTA, GPIO_PIN_7, GPIO_MODE_OUTPUT);
+ GPIO_SetPinOutputType(PORTA, GPIO_PIN_7, GPIO_OUTPUT_TYPE_PUSH_PULL);
+ GPIO_SetPinOutputSpeed(PORTA, GPIO_PIN_7, GPIO_OUTPUT_SPEED_LOW);
+ GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_LOW);
+
 /******<< GPIOA 9 *****/
 
  GPIO_SetPinMode(PORTA, GPIO_PIN_9, GPIO_MODE_INPUT);
@@ -48,11 +55,16 @@ int main(void)
 
 /************< STK >*************/
  STK_voidInit();
- STK_SetIntervalSingle(TogglePin, 1000);
+
+ /* Set the interval to 1000 ms */
+ STK_SetIntervalPeriodic(TogglePin, 1000);
  /* Loop forever */
 
     while (1) 
     {
-
+       GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_LOW);
+       STK_delay_ms(100);
+       GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_HIGH);
+       STK_delay_ms(100);
     }
 }
