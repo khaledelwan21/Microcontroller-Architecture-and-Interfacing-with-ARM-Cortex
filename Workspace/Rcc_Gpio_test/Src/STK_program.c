@@ -15,9 +15,12 @@
 #include "STK_config.h"
 #include "RCC_interface.h"
 
+/***************************, Global Variables ******************** */
+static void (*pf)(void) = NULL;
+static volatile u32 g_u32MsTicks = 0;
 
-
-void STK_voidInit(u32 Copy_u32Ticks)
+/***************************< Functions *****************************/
+void STK_voidInit(void)
 {
     STK->CTRL &=~ STK_ENABLE ; // Disable SysTick during initialization
 
@@ -37,19 +40,12 @@ void STK_voidInit(u32 Copy_u32Ticks)
         #error "Invalid STK_CTRL_INTERRUPT_ENABLE configuration"
     #endif  
 
-    if (Copy_u32Ticks > STK_Reload_MAX_Value)
-    {
-        // Handle error: Reload value exceeds maximum allowed value
-        // You can choose to return an error code or assert here
-
-    }
-    else
-    {
-    STK->LOAD = Copy_u32Ticks - 1; // Set reload value
+    u32 Local_TicksPerMs = (u32)(STK_GetAHBFrequency() / 1000);
+    STK->LOAD = Local_TicksPerMs - 1;
     STK->VAL = 0; // Clear current value
     STK->CTRL |= STK_ENABLE; // Enable SysTick
-    }
 }
+
 
 
 
@@ -105,7 +101,7 @@ u32 STK_GetRemainingTime_ms(void)
 }
 
 
-static void STK_delay_1ms(u32 Num_Ticks, u32 Local_Counter) //void STK_delay_1ms(void)
+/*static void STK_delay_1ms(u32 Num_Ticks, u32 Local_Counter) //void STK_delay_1ms(void)
 {   
     while (Local_Counter != 0)
     {
@@ -117,17 +113,44 @@ static void STK_delay_1ms(u32 Num_Ticks, u32 Local_Counter) //void STK_delay_1ms
     STK->CTRL &=~ STK_ENABLE; // Disable SysTick
     Local_Counter--;
     }
-}
+}*/
 u32 STK_delay_ms(u32 Copy_u32DelayTime_ms)
 {
-    u32 Num_Ticks = (u32)(STK_GetAHBFrequency() / 1000);
+    u32 Local_StartTime = STK_Millis(); // Get current time
     
-    u32 Local_Counter = Copy_u32DelayTime_ms;
-    STK_delay_1ms(Num_Ticks, Local_Counter);
+while ((STK_Millis() - Local_StartTime) < Copy_u32DelayTime_ms)  // Wait until the specified delay time is reached
+    {
+         __WFI(); // Wait for interrupt
+    }
 
     return 0;
 }
 
+u32 STK_Millis(void)
+{
+    return g_u32MsTicks;
+}
 
+/*Std_ReturnType STK_SetIntervalSingle(void (*Copy_CallBackFunc)(void), u32 Copy_u32DelayTime_ms)
+{
+    pf = Copy_CallBackFunc;
+    STK_delay_ms(Copy_u32DelayTime_ms);
+    return E_OK;
+}
 
-
+Std_ReturnType STK_SetIntervalPeriodic(void (*Copy_CallBackFunc)(void), u32 Copy_u32DelayTime_ms)
+{
+    pf = Copy_CallBackFunc;
+    STK_delay_ms(Copy_u32DelayTime_ms);
+    return E_OK;
+}
+*/
+void SysTick_Handler(void)
+{
+    g_u32MsTicks++;
+    
+    if (pf != NULL)
+    {
+        pf();
+    }
+}

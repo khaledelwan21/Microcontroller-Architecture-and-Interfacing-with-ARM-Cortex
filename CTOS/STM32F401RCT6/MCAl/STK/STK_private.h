@@ -35,6 +35,9 @@ typedef struct
 
 #define STK_Reload_MAX_Value 0x00FFFFFF
 
-
+static inline void __WFI(void)
+{
+    __asm volatile ("wfi");
+}
 
 #endif

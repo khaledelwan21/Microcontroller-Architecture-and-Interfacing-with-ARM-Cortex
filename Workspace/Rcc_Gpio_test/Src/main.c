@@ -39,19 +39,29 @@ int main(void)
 
 /******<< GPIOA 9 *****/
 
-GPIO_SetPinMode(PORTA, GPIO_PIN_9, GPIO_MODE_INPUT);
-GPIO_SetPinPullUpDown(PORTA, GPIO_PIN_9, GPIO_PULL_UP_DOWN_PULL_DOWN);
+ GPIO_SetPinMode(PORTA, GPIO_PIN_9, GPIO_MODE_INPUT);
+ GPIO_SetPinPullUpDown(PORTA, GPIO_PIN_9, GPIO_PULL_UP_DOWN_PULL_DOWN);
+
+/************< STK >*************/
+ STK_voidInit();
 
  /* Loop forever */
 
     while (1) 
     {
   
- GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH);
- STK_delay_ms(10000);
+/* GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH);
+ STK_delay_ms(2000);
  GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_LOW);
- STK_delay_ms(10000);
+ STK_delay_ms(2000);*/
 
-
+      if(STK_Millis() %4000 <2000)
+      {
+          GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH);
+      }
+      else
+      {
+          GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_LOW);
+      }
     }
 }
