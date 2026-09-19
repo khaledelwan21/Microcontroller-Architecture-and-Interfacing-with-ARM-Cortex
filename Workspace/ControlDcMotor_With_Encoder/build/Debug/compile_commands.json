@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/syscall.c.obj -c /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/syscall.c",
+  "file": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/syscall.c",
+  "output": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/syscall.c.obj"
+},
+{
+  "directory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/sysmem.c.obj -c /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/sysmem.c",
+  "file": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/sysmem.c",
+  "output": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/sysmem.c.obj"
+},
+{
+  "directory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/main.c.obj -c /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/main.c",
+  "file": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/main.c",
+  "output": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/main.c.obj"
+},
+{
+  "directory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -x assembler-with-cpp -MMD -MP -o CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/startup_stm32f401xx.S.obj -c /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/startup_stm32f401xx.S",
+  "file": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/startup_stm32f401xx.S",
+  "output": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/startup_stm32f401xx.S.obj"
+},
+{
+  "directory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/RCC_program.c.obj -c /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/RCC_program.c",
+  "file": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/RCC_program.c",
+  "output": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/RCC_program.c.obj"
+},
+{
+  "directory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/GPIO_program.c.obj -c /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/GPIO_program.c",
+  "file": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/GPIO_program.c",
+  "output": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/GPIO_program.c.obj"
+},
+{
+  "directory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/NVIC_program.c.obj -c /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/NVIC_program.c",
+  "file": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/NVIC_program.c",
+  "output": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/NVIC_program.c.obj"
+},
+{
+  "directory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/STK_program.c.obj -c /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c",
+  "file": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c",
+  "output": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/STK_program.c.obj"
+},
+{
+  "directory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug",
+  "command": "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc -DDEBUG -DRTE_DEVICE_STARTUP_STM32F4XX -I/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc -fdata-sections -ffunction-sections -Wl,--gc-sections -Wno-comment -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mlittle-endian -mthumb -std=gnu11 -fstack-usage -Wall -Wextra -Wpedantic -Wno-unused-parameter -O0 -g3 -ggdb -o CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/EXTI_program.c.obj -c /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/EXTI_program.c",
+  "file": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/EXTI_program.c",
+  "output": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir/Src/EXTI_program.c.obj"
+}
+]

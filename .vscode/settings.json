@@ -1,4 +1,4 @@
 {
-    "cmake.sourceDirectory": "/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/Rcc_test",
+    "cmake.sourceDirectory": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder",
     "cortex-debug.variableUseNaturalFormat": true
 }

@@ -1,0 +1,5 @@
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/RCC_program.c:21:13:RCC_EnableHSE	4	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/RCC_program.c:47:16:RCC_InitSysClock	16	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/RCC_program.c:138:16:RCC_EnablePeripheralClock	24	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/RCC_program.c:184:16:RCC_DisablePeripheralClock	24	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/RCC_program.c:225:16:RCC_GetFrequency	64	static

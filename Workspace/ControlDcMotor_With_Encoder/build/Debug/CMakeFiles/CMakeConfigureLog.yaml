@@ -1,0 +1,889 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:228 (message)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      The target system is: Generic -  - arm
+      The host system is: Linux - 7.0.0-30-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc 
+      Build flags: -fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wno-comment
+      Id flags:  
+      
+      The output was:
+      1
+      /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/libc.a(libc_a-exit.o): in function `exit':
+      (.text.exit+0x28): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc 
+      Build flags: -fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wno-comment
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is GNU, found in:
+        /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/3.28.1/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-g++ 
+      Build flags: -fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wno-comment;-fno-rtti;-fno-exceptions;-fno-threadsafe-statics
+      Id flags:  
+      
+      The output was:
+      1
+      /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/libc.a(libc_a-exit.o): in function `exit':
+      (.text.exit+0x28): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-g++ 
+      Build flags: -fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wno-comment;-fno-rtti;-fno-exceptions;-fno-threadsafe-statics
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is GNU, found in:
+        /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/3.28.1/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:1131 (message)"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/share/cmake-3.28/Modules/CMakeDetermineASMCompiler.cmake:131 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:19 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      arm-none-eabi-gcc (GNU Tools for STM32 14.3.rel1.20251027-0700) 14.3.1 20250623
+      Copyright (C) 2024 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+...
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineSystem.cmake:207 (message)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      The target system is: Generic -  - arm
+      The host system is: Linux - 7.0.0-30-generic - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:67 (_cmake_find_compiler_path)"
+      - "CMakeLists.txt:16 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-none-eabi-gcc"
+    candidate_directories:
+      - "/opt/ros/jazzy/opt/sdformat_vendor/bin/"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin/"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64/"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64/"
+      - "/home/khaled-ahmed-elwan/.local/bin/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/"
+      - "/opt/ros/jazzy/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/"
+      - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/opt/ros/jazzy/opt/sdformat_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/arm-none-eabi-gcc"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin/arm-none-eabi-gcc"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64/arm-none-eabi-gcc"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64/arm-none-eabi-gcc"
+      - "/home/khaled-ahmed-elwan/.local/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/bin/arm-none-eabi-gcc"
+    found: "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/jazzy/opt/sdformat_vendor"
+        - "/opt/ros/jazzy/opt/gz_math_vendor"
+        - "/opt/ros/jazzy/opt/gz_utils_vendor"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor"
+        - "/opt/ros/jazzy/opt/gz_cmake_vendor"
+      ENV{PATH}:
+        - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor/bin"
+        - "/opt/ros/jazzy/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/"
+    found: "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/jazzy/opt/sdformat_vendor"
+        - "/opt/ros/jazzy/opt/gz_math_vendor"
+        - "/opt/ros/jazzy/opt/gz_utils_vendor"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor"
+        - "/opt/ros/jazzy/opt/gz_cmake_vendor"
+      ENV{PATH}:
+        - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor/bin"
+        - "/opt/ros/jazzy/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" failed.
+      Compiler: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc 
+      Build flags: -fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wno-comment
+      Id flags:  
+      
+      The output was:
+      1
+      /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/libc.a(libc_a-exit.o): in function `exit':
+      (.text.exit+0x28): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/"
+    found: "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/jazzy/opt/sdformat_vendor"
+        - "/opt/ros/jazzy/opt/gz_math_vendor"
+        - "/opt/ros/jazzy/opt/gz_utils_vendor"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor"
+        - "/opt/ros/jazzy/opt/gz_cmake_vendor"
+      ENV{PATH}:
+        - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor/bin"
+        - "/opt/ros/jazzy/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc 
+      Build flags: -fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wno-comment
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CMakeCCompilerId.o"
+      
+      The C compiler identification is GNU, found in:
+        /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/4.2.3/CompilerIdC/CMakeCCompilerId.o
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:71 (_cmake_find_compiler_path)"
+      - "CMakeLists.txt:16 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-none-eabi-g++"
+    candidate_directories:
+      - "/opt/ros/jazzy/opt/sdformat_vendor/bin/"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin/"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64/"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64/"
+      - "/home/khaled-ahmed-elwan/.local/bin/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/"
+      - "/opt/ros/jazzy/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/"
+      - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/opt/ros/jazzy/opt/sdformat_vendor/bin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/sbin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/bin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/sbin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/bin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/sbin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/sbin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/bin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/sbin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/arm-none-eabi-g++"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin/arm-none-eabi-g++"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64/arm-none-eabi-g++"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64/arm-none-eabi-g++"
+      - "/home/khaled-ahmed-elwan/.local/bin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/arm-none-eabi-g++"
+      - "/opt/ros/jazzy/bin/arm-none-eabi-g++"
+    found: "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-g++"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/jazzy/opt/sdformat_vendor"
+        - "/opt/ros/jazzy/opt/gz_math_vendor"
+        - "/opt/ros/jazzy/opt/gz_utils_vendor"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor"
+        - "/opt/ros/jazzy/opt/gz_cmake_vendor"
+      ENV{PATH}:
+        - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor/bin"
+        - "/opt/ros/jazzy/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/"
+    found: "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/jazzy/opt/sdformat_vendor"
+        - "/opt/ros/jazzy/opt/gz_math_vendor"
+        - "/opt/ros/jazzy/opt/gz_utils_vendor"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor"
+        - "/opt/ros/jazzy/opt/gz_cmake_vendor"
+      ENV{PATH}:
+        - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor/bin"
+        - "/opt/ros/jazzy/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" failed.
+      Compiler: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-g++ 
+      Build flags: -fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wno-comment;-fno-rtti;-fno-exceptions;-fno-threadsafe-statics
+      Id flags:  
+      
+      The output was:
+      1
+      /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/bin/ld: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/libc.a(libc_a-exit.o): in function `exit':
+      (.text.exit+0x28): undefined reference to `_exit'
+      collect2: error: ld returned 1 exit status
+      
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/"
+    found: "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/jazzy/opt/sdformat_vendor"
+        - "/opt/ros/jazzy/opt/gz_math_vendor"
+        - "/opt/ros/jazzy/opt/gz_utils_vendor"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor"
+        - "/opt/ros/jazzy/opt/gz_cmake_vendor"
+      ENV{PATH}:
+        - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor/bin"
+        - "/opt/ros/jazzy/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:16 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-g++ 
+      Build flags: -fdata-sections;-ffunction-sections;-Wl,--gc-sections;-Wno-comment;-fno-rtti;-fno-exceptions;-fno-threadsafe-statics
+      Id flags: -c 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is GNU, found in:
+        /media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/4.2.3/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompiler.cmake:115 (find_program)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:64 (_cmake_find_compiler_path)"
+      - "CMakeLists.txt:19 (enable_language)"
+    mode: "program"
+    variable: "CMAKE_ASM_COMPILER_WITH_PATH"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "arm-none-eabi-gcc"
+    candidate_directories:
+      - "/opt/ros/jazzy/opt/sdformat_vendor/bin/"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/bin/"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/sbin/"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin/"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64/"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64/"
+      - "/home/khaled-ahmed-elwan/.local/bin/"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/"
+      - "/opt/ros/jazzy/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/"
+      - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/CMake/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin/"
+      - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/sbin/"
+      - "/usr/bin/"
+      - "/sbin/"
+      - "/bin/"
+      - "/usr/games/"
+      - "/usr/local/games/"
+      - "/snap/bin/"
+    searched_directories:
+      - "/opt/ros/jazzy/opt/sdformat_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/sdformat_vendor/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_math_vendor/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_utils_vendor/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/sbin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_cmake_vendor/arm-none-eabi-gcc"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin/arm-none-eabi-gcc"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64/arm-none-eabi-gcc"
+      - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64/arm-none-eabi-gcc"
+      - "/home/khaled-ahmed-elwan/.local/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/opt/gz_tools_vendor/bin/arm-none-eabi-gcc"
+      - "/opt/ros/jazzy/bin/arm-none-eabi-gcc"
+    found: "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/arm-none-eabi-gcc"
+    search_context:
+      ENV{CMAKE_PREFIX_PATH}:
+        - "/opt/ros/jazzy/opt/sdformat_vendor"
+        - "/opt/ros/jazzy/opt/gz_math_vendor"
+        - "/opt/ros/jazzy/opt/gz_utils_vendor"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor"
+        - "/opt/ros/jazzy/opt/gz_cmake_vendor"
+      ENV{PATH}:
+        - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/bin"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.46.0-linux-x64/resources/cube-cmake/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.vscode/extensions/stmicroelectronics.stm32cube-ide-core-1.4.0-linux-x64/resources/binaries/linux/x86_64"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/ros/jazzy/opt/gz_tools_vendor/bin"
+        - "/opt/ros/jazzy/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0"
+        - "/opt/st/stm32cubeclt_1.21.0/STM32CubeProgrammer/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/STLink-gdb-server/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/CMake/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/Ninja/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/st-arm-clang/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/sbin"
+        - "/usr/bin"
+        - "/sbin"
+        - "/bin"
+        - "/usr/games"
+        - "/usr/local/games"
+        - "/snap/bin"
+        - "/snap/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+        - "/home/khaled-ahmed-elwan/.local/bin"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PROGRAM_PATH:
+        - "/bin"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineCompilerId.cmake:1290 (message)"
+      - "/home/khaled-ahmed-elwan/.local/share/stm32cube/bundles/cmake/4.2.3+st.1/share/cmake-4.2/Modules/CMakeDetermineASMCompiler.cmake:170 (CMAKE_DETERMINE_COMPILER_ID_VENDOR)"
+      - "CMakeLists.txt:19 (enable_language)"
+    message: |
+      Checking whether the ASM compiler is GNU using "--version" matched "(GNU assembler)|(GCC)|(Free Software Foundation)":
+      arm-none-eabi-gcc (GNU Tools for STM32 14.3.rel1.20251027-0700) 14.3.1 20250623
+      Copyright (C) 2024 Free Software Foundation, Inc.
+      This is free software; see the source for copying conditions.  There is NO
+      warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+      
+...

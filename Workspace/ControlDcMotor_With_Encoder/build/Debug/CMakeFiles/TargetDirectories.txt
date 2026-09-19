@@ -1,0 +1,3 @@
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/ControlDcMotor_With_Encoder.dir
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/edit_cache.dir
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/CMakeFiles/rebuild_cache.dir

@@ -437,8 +437,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x18a CMakeFiles/EXTI_test.dir/Src/syscall.c.obj
  .debug_macro   0x00000000       0x16 CMakeFiles/EXTI_test.dir/Src/syscall.c.obj
  .debug_macro   0x00000000       0xce CMakeFiles/EXTI_test.dir/Src/syscall.c.obj
- .debug_line    0x00000000      0x622 CMakeFiles/EXTI_test.dir/Src/syscall.c.obj
- .debug_str     0x00000000     0x9464 CMakeFiles/EXTI_test.dir/Src/syscall.c.obj
+ .debug_line    0x00000000      0x628 CMakeFiles/EXTI_test.dir/Src/syscall.c.obj
+ .debug_str     0x00000000     0x9470 CMakeFiles/EXTI_test.dir/Src/syscall.c.obj
  .comment       0x00000000       0x44 CMakeFiles/EXTI_test.dir/Src/syscall.c.obj
  .debug_frame   0x00000000      0x288 CMakeFiles/EXTI_test.dir/Src/syscall.c.obj
  .ARM.attributes
@@ -498,8 +498,8 @@ Discarded input sections
  .debug_macro   0x00000000      0x103 CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj
  .debug_macro   0x00000000       0x6a CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj
  .debug_macro   0x00000000      0x1df CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj
- .debug_line    0x00000000      0x2ff CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj
- .debug_str     0x00000000     0x716a CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj
+ .debug_line    0x00000000      0x305 CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj
+ .debug_str     0x00000000     0x7176 CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj
  .comment       0x00000000       0x44 CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj
  .debug_frame   0x00000000       0x34 CMakeFiles/EXTI_test.dir/Src/sysmem.c.obj
  .ARM.attributes
@@ -1081,22 +1081,22 @@ LOAD linker stubs
  .debug_macro   0x0000078e       0x16 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
  .debug_macro   0x000007a4       0x48 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
 
-.debug_line     0x00000000     0x132b
- .debug_line    0x00000000      0x217 CMakeFiles/EXTI_test.dir/Src/main.c.obj
- .debug_line    0x00000217      0x2ad CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
- .debug_line    0x000004c4      0x626 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
- .debug_line    0x00000aea      0x3b7 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
- .debug_line    0x00000ea1      0x40f CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
- .debug_line    0x000012b0       0x7b CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+.debug_line     0x00000000     0x1367
+ .debug_line    0x00000000      0x223 CMakeFiles/EXTI_test.dir/Src/main.c.obj
+ .debug_line    0x00000223      0x2b9 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
+ .debug_line    0x000004dc      0x632 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+ .debug_line    0x00000b0e      0x3c3 CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
+ .debug_line    0x00000ed1      0x41b CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+ .debug_line    0x000012ec       0x7b CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
 
-.debug_str      0x00000000     0x56b8
- .debug_str     0x00000000     0x56b8 CMakeFiles/EXTI_test.dir/Src/main.c.obj
-                               0x5162 (size before relaxing)
- .debug_str     0x000056b8     0x3a70 CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
- .debug_str     0x000056b8     0x4060 CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
- .debug_str     0x000056b8     0x36ce CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
- .debug_str     0x000056b8     0x439e CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
- .debug_str     0x000056b8      0x116 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+.debug_str      0x00000000     0x56e2
+ .debug_str     0x00000000     0x56e2 CMakeFiles/EXTI_test.dir/Src/main.c.obj
+                               0x516e (size before relaxing)
+ .debug_str     0x000056e2     0x3a7c CMakeFiles/EXTI_test.dir/Src/RCC_program.c.obj
+ .debug_str     0x000056e2     0x406c CMakeFiles/EXTI_test.dir/Src/GPIO_program.c.obj
+ .debug_str     0x000056e2     0x36da CMakeFiles/EXTI_test.dir/Src/NVIC_program.c.obj
+ .debug_str     0x000056e2     0x43aa CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
+ .debug_str     0x000056e2      0x122 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 CMakeFiles/EXTI_test.dir/Src/main.c.obj
@@ -1107,6 +1107,6 @@ LOAD linker stubs
  .comment       0x00000043       0x44 CMakeFiles/EXTI_test.dir/Src/EXTI_program.c.obj
 
 .debug_line_str
-                0x00000000       0xfa
+                0x00000000      0x106
  .debug_line_str
-                0x00000000       0xfa CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj
+                0x00000000      0x106 CMakeFiles/EXTI_test.dir/Src/startup_stm32f401xx.S.obj

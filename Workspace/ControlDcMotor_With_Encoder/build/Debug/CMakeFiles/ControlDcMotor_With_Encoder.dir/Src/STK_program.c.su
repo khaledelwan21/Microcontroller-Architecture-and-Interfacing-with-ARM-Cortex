@@ -1,0 +1,13 @@
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Inc/STK_private.h:38:20:__WFI	4	static,ignoring_inline_asm
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:29:6:STK_voidInit	16	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:58:6:STK_Stop	4	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:63:6:STK_Reset	4	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:70:5:STK_GetAHBFrequency	24	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:87:12:STK_GetRemainingTime	56	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:99:5:STK_GetRemainingTime_us	8	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:104:5:STK_GetRemainingTime_ms	8	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:123:5:STK_delay_ms	24	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:135:5:STK_Millis	4	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:140:16:STK_SetIntervalSingle	16	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:147:16:STK_SetIntervalPeriodic	16	static
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/Src/STK_program.c:155:6:SysTick_Handler	8	static

@@ -52,7 +52,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /opt/st/stm32cubeclt_1.21.0/CMake/bin/cmake --regenerate-during-build -S/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test -B/home/khaled-ahmed-elwan/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug
+  command = /opt/st/stm32cubeclt_1.21.0/CMake/bin/cmake --regenerate-during-build -S/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test -B/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/EXTI_test/build/Debug
   description = Re-running CMake...
   generator = 1
 

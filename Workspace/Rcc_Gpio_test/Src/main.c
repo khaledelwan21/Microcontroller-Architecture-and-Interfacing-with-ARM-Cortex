@@ -67,4 +67,12 @@ int main(void)
        GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_HIGH);
        STK_delay_ms(100);
     }
+
+    while (1) 
+    {
+       GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_LOW);
+       STK_delay_ms(100);
+       GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_HIGH);
+       STK_delay_ms(100);
+    }
 }
