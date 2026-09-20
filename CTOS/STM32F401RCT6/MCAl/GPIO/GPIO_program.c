@@ -254,3 +254,76 @@ Std_ReturnType GPIO_SetPinValue(u8 Copy_u8PortId, u8 Copy_u8PinId, u8 Copy_pu8Pi
     return Local_FunctionState; 
 }   
 
+Std_ReturnType GPIO_AF_Set(u8 Copy_u8PortId,u8 Copy_u8PinId,u8 Copy_u8AFValue)
+{
+    Std_ReturnType Local_FunctionState = E_NOT_OK;  
+
+    switch (Copy_u8PortId)
+    {
+    case PORTA:
+        if(Copy_u8PinId < 8)
+        {
+            GPIOA_AFRL &= ~(0x0F << (Copy_u8PinId * 4)); // Clear the alternate function bits for the specified pin
+            GPIOA_AFRL |= (Copy_u8AFValue << (Copy_u8PinId * 4)); // Set the alternate function bits for the specified pin
+        }
+        else
+        {
+            GPIOA_AFRH &= ~(0x0F << ((Copy_u8PinId - 8) * 4)); // Clear the alternate function bits for the specified pin
+            GPIOA_AFRH |= (Copy_u8AFValue << ((Copy_u8PinId - 8) * 4)); // Set the alternate function bits for the specified pin
+        }
+        Local_FunctionState = E_OK;
+        break;
+    case PORTB:
+        if(Copy_u8PinId < 8)
+        {
+            GPIOB_AFRL &= ~(0x0F << (Copy_u8PinId * 4)); // Clear the alternate function bits for the specified pin
+            GPIOB_AFRL |= (Copy_u8AFValue << (Copy_u8PinId * 4)); // Set the alternate function bits for the specified pin
+        }
+        else
+        {
+            GPIOB_AFRH &= ~(0x0F << ((Copy_u8PinId - 8) * 4)); // Clear the alternate function bits for the specified pin
+            GPIOB_AFRH |= (Copy_u8AFValue << ((Copy_u8PinId - 8) * 4)); // Set the alternate function bits for the specified pin
+        }
+        break;
+    case PORTC:
+        if(Copy_u8PinId < 8)
+        {
+            GPIOC_AFRL &= ~(0x0F << (Copy_u8PinId * 4)); // Clear the alternate function bits for the specified pin
+            GPIOC_AFRL |= (Copy_u8AFValue << (Copy_u8PinId * 4)); // Set the alternate function bits for the specified pin
+        }
+        else
+        {
+            GPIOC_AFRH &= ~(0x0F << ((Copy_u8PinId))); // Clear the alternate function bits for the specified pin
+            GPIOC_AFRH |= (Copy_u8AFValue << ((Copy_u8PinId))); // Set the alternate function bits for the specified pin
+        }
+        break;
+    case PORTD:
+        if(Copy_u8PinId < 8)
+        {
+            GPIOD_AFRL &= ~(0x0F << (Copy_u8PinId * 4)); // Clear the alternate function bits for the specified pin
+            GPIOD_AFRL |= (Copy_u8AFValue << (Copy_u8PinId * 4)); // Set the alternate function bits for the specified pin
+        }
+        else
+        {
+            GPIOD_AFRH &= ~(0x0F << ((Copy_u8PinId - 8) * 4)); // Clear the alternate function bits for the specified pin
+            GPIOD_AFRH |= (Copy_u8AFValue << ((Copy_u8PinId - 8) * 4)); // Set the alternate function bits for the specified pin
+        }
+        break;
+    case PORTE:
+        if(Copy_u8PinId < 8)
+        {
+            GPIOE_AFRL &= ~(0x0F << (Copy_u8PinId * 4)); // Clear the alternate function bits for the specified pin
+            GPIOE_AFRL |= (Copy_u8AFValue << (Copy_u8PinId * 4)); // Set the alternate function bits for the specified pin
+        }
+        else
+        {
+            GPIOE_AFRH &= ~(0x0F << ((Copy_u8PinId - 8) * 4)); // Clear the alternate function bits for the specified pin
+            GPIOE_AFRH |= (Copy_u8AFValue << ((Copy_u8PinId - 8) * 4)); // Set the alternate function bits for the specified pin
+        }
+        break;
+    default:
+        Local_FunctionState = E_NOT_OK;
+        break;
+    }
+    return Local_FunctionState;
+}
