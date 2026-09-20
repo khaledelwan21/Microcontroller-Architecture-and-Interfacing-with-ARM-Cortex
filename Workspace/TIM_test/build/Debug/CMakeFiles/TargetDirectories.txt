@@ -1,0 +1,3 @@
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/TIM_test/build/Debug/CMakeFiles/TIM_test.dir
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/TIM_test/build/Debug/CMakeFiles/edit_cache.dir
+/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/TIM_test/build/Debug/CMakeFiles/rebuild_cache.dir
