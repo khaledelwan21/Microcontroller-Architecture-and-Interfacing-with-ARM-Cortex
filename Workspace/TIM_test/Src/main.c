@@ -16,7 +16,7 @@
  ******************************************************************************
  */
 
-#include <stdint.h>
+
 
 #include <BIT_MATH.h>
 #include "STD_TYPES.h"
@@ -31,11 +31,10 @@ int main(void)
 
 RCC_InitSysClock();
 RCC_EnablePeripheralClock(RCC_APB1_BUS, RCC_APB1ENR_TIM2EN_BIT);
-RCC_EnablePeripheralClock(RCC_AHB1_BUS, RCC_AHB1ENR_GPIOA_EN_BIT);
+RCC_EnablePeripheralClock(RCC_APB2_BUS, RCC_APB2ENR_TIM10EN_BIT);
+RCC_EnablePeripheralClock(RCC_AHB1_BUS, RCC_AHB1ENR_GPIOB_EN_BIT);
 RCC_EnablePeripheralClock(RCC_AHB1_BUS, RCC_AHB1ENR_GPIOC_EN_BIT);  
 RCC_GetFrequency(&freq);
-
-
 
 /******<< GPIOC 13 *****/
 
@@ -45,17 +44,21 @@ RCC_GetFrequency(&freq);
  GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_LOW);
 
 /******<< GPIOA 0 *****/
-GPIO_SetPinMode(PORTA, GPIO_PIN_0, GPIO_MODE_AF);
-GPIO_AF_Set(PORTA, GPIO_PIN_0, GPIO_AF_1);
+GPIO_SetPinMode(PORTA, GPIO_PIN_2, GPIO_MODE_AF);
+GPIO_AF_Set(PORTA, GPIO_PIN_2, GPIO_AF_3);
+
+/******<< GPIOA 0 *****/
+GPIO_SetPinMode(PORTB, GPIO_PIN_8, GPIO_MODE_AF);
+GPIO_AF_Set(PORTB, GPIO_PIN_8, GPIO_AF_3);
 
 /******<< GPIOA 1 *****/
-TIM_voidInit(TIM_2);
-TIM_voidSetCaptureCompareMode(TIM_2, CHANNEL_1, 0);
-TIM_voidSetOutputCompareMode(TIM_2, CHANNEL_1, TIM_OC_PWM_MODE1);
-TIM_voidSetPwmFrequency(TIM_2, 200);      
-TIM_voidSetDuty(TIM_2, CHANNEL_1, 110);
-TIM_voidEnableChannel(TIM_2, CHANNEL_1);
-TIM_voidStart(TIM_2);
+TIM_voidInit(TIM_10);
+TIM_voidSetCaptureCompareMode(TIM_10, CHANNEL_1, 0);
+TIM_voidSetOutputCompareMode(TIM_10, CHANNEL_1, TIM_OC_PWM_MODE1);
+TIM_voidSetPwmFrequency(TIM_10, 200);      
+TIM_voidSetDuty(TIM_10, CHANNEL_1, 10);
+TIM_voidEnableChannel(TIM_10, CHANNEL_1);
+TIM_voidStart(TIM_10);
 
 
     /* Loop forever */
