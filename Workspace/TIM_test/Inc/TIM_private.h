@@ -19,26 +19,28 @@
 /**************************< TIM2 Registers >******************************************/
 typedef struct TIM2_5_Type
 {
-    volatile u32 CR1;
-    volatile u32 CR2;
-    volatile u32 SMCR;
-    volatile u32 DIER;
-    volatile u32 SR;
-    volatile u32 EGR;
-    volatile u32 CCMR1;
-    volatile u32 CCMR2;
-    volatile u32 CCER;
-    volatile u32 CNT;
-    volatile u32 PSC;
-    volatile u32 ARR;
-    volatile u32 CCR1;
-    volatile u32 CCR2;
-    volatile u32 CCR3;
-    volatile u32 CCR4;
-    volatile u32 DCR;
-    volatile u32 DMAR;
-
-}TIM2_5_Type;
+    volatile u32 CR1;       /* 0x00 */
+    volatile u32 CR2;       /* 0x04 */
+    volatile u32 SMCR;      /* 0x08 */
+    volatile u32 DIER;      /* 0x0C */
+    volatile u32 SR;        /* 0x10 */
+    volatile u32 EGR;       /* 0x14 */
+    volatile u32 CCMR1;     /* 0x18 */
+    volatile u32 CCMR2;     /* 0x1C */
+    volatile u32 CCER;      /* 0x20 */
+    volatile u32 CNT;       /* 0x24 */
+    volatile u32 PSC;       /* 0x28 */
+    volatile u32 ARR;       /* 0x2C */
+    volatile u32 RESERVED0; /* 0x30 */
+    volatile u32 CCR1;      /* 0x34 */
+    volatile u32 CCR2;      /* 0x38 */
+    volatile u32 CCR3;      /* 0x3C */
+    volatile u32 CCR4;      /* 0x40 */
+    volatile u32 RESERVED1; /* 0x44 */
+    volatile u32 DCR;       /* 0x48 */
+    volatile u32 DMAR;      /* 0x4C */
+    volatile u32 OR;        /* 0x50 */
+} TIM2_5_Type;
 #define TIM2 ((TIM2_5_Type*)TIM2_BASE_ADDRESS)
 #define TIM3 ((TIM2_5_Type*)TIM3_BASE_ADDRESS)
 #define TIM4 ((TIM2_5_Type*)TIM4_BASE_ADDRESS)
@@ -66,7 +68,7 @@ typedef struct TIM2_5_Type
 #define ENABLE_BUFFER   1
 #define DISABLE_BUFFER  0
 
-#define TIM_CR1_CMS2    4
+
 #define TIM_CR1_CMS0    5
 #define TIM_CR1_CMS1    6
 

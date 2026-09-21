@@ -18,8 +18,32 @@
 
 #include <stdint.h>
 
+#include <BIT_MATH.h>
+#include "STD_TYPES.h"
+
+#include "TIM_interface.h"
+#include "RCC_interface.h"
+#include "GPIO_interface.h"
+ #define REG(addr)   (*(volatile u32 *)(addr))
 int main(void)
 {
+
+RCC_InitSysClock();
+RCC_EnablePeripheralClock(RCC_APB1_BUS, RCC_APB1ENR_TIM2EN_BIT);
+RCC_EnablePeripheralClock(RCC_AHB1_BUS, RCC_AHB1ENR_GPIOA_EN_BIT);
+
+GPIO_SetPinMode(PORTA, GPIO_PIN_0, GPIO_MODE_AF);
+GPIO_AF_Set(PORTA, GPIO_PIN_0, GPIO_AF_1);
+
+TIM_voidInit(TIM_2);
+TIM_voidSetCaptureCompareMode(TIM_2, CHANNEL_1, 0);
+TIM_voidSetOutputCompareMode(TIM_2, CHANNEL_1, TIM_OC_PWM_MODE1);
+TIM_voidSetPwmFrequency(TIM_2, 2000);      
+TIM_voidSetDuty(TIM_2, CHANNEL_1, 10);
+TIM_voidEnableChannel(TIM_2, CHANNEL_1);
+TIM_voidStart(TIM_2);
+
+
     /* Loop forever */
 	for(;;);
 }

@@ -4,7 +4,7 @@
     {
       "name": "Cortex Debug (STM32F401)",
       "cwd": "${workspaceFolder}",
-      "executable": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/ControlDcMotor_With_Encoder/build/Debug/ControlDcMotor_With_Encoder.elf",
+      "executable": "/media/khaled-ahmed-elwan/DATA/Microcontroller-Architecture-and-Interfacing-with-ARM-Cortex/Workspace/TIM_test/build/Debug/TIM_test.elf",
       "request": "launch",
       "type": "cortex-debug",
       "runToEntryPoint": "main",

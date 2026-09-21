@@ -146,6 +146,7 @@ Std_ReturnType GPIO_AF_Set(u8 Copy_u8PortId,u8 Copy_u8PinId,u8 Copy_u8AFValue);
 
 /***********************< AF VALUES >************************************/
 
+
 #define GPIO_AF_0  0x00
 #define GPIO_AF_1  0x01
 #define GPIO_AF_2  0x02
@@ -162,6 +163,5 @@ Std_ReturnType GPIO_AF_Set(u8 Copy_u8PortId,u8 Copy_u8PinId,u8 Copy_u8AFValue);
 #define GPIO_AF_13 0x0D
 #define GPIO_AF_14 0x0E
 #define GPIO_AF_15 0x0F
-
 
 #endif
