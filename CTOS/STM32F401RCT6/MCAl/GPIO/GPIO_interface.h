@@ -12,6 +12,81 @@
 #include "GPIO_private.h"
 #include "GPIO_config.h"
 
+
+
+/***************************< PORTS >************************************************/
+
+#define PORTA 0
+#define PORTB 1
+#define PORTC 2
+#define PORTD 3
+#define PORTE 4
+
+/***************************< PINS BITS >********************************************/
+#define GPIO_PIN_0  0
+#define GPIO_PIN_1  1
+#define GPIO_PIN_2  2
+#define GPIO_PIN_3  3
+#define GPIO_PIN_4  4
+#define GPIO_PIN_5  5
+#define GPIO_PIN_6  6   
+#define GPIO_PIN_7  7
+#define GPIO_PIN_8  8
+#define GPIO_PIN_9  9
+#define GPIO_PIN_10 10
+#define GPIO_PIN_11 11
+#define GPIO_PIN_12 12
+#define GPIO_PIN_13 13
+#define GPIO_PIN_14 14
+#define GPIO_PIN_15 15
+
+/*************************< MODES >************************************************/
+#define GPIO_MODE_INPUT  0x00
+#define GPIO_MODE_OUTPUT 0x01
+#define GPIO_MODE_AF     0x02
+#define GPIO_MODE_ANALOG 0x03
+
+/*************************< OUTPUT TYPES >***********************************************/
+#define GPIO_OUTPUT_TYPE_PUSH_PULL 0x00
+#define GPIO_OUTPUT_TYPE_OPEN_DRAIN 0x01
+
+/*************************< OUTPUT SPEEDS >***********************************************/
+#define GPIO_OUTPUT_SPEED_LOW 0x00
+#define GPIO_OUTPUT_SPEED_MEDIUM 0x01
+#define GPIO_OUTPUT_SPEED_HIGH 0x02
+#define GPIO_OUTPUT_SPEED_VERY_HIGH 0x03
+
+/*************************< PULL UP DOWN RESISTORS >***********************************************/
+#define GPIO_PULL_UP_DOWN_NONE 0x00
+#define GPIO_PULL_UP_DOWN_PULL_UP 0x01
+#define GPIO_PULL_UP_DOWN_PULL_DOWN 0x02    
+
+
+/***********************< PIN VALUES >************************************/
+#define GPIO_PIN_VALUE_LOW  0
+#define GPIO_PIN_VALUE_HIGH 1
+
+
+/***********************< AF VALUES >************************************/
+
+#define GPIO_AF_0  0x00
+#define GPIO_AF_1  0x01
+#define GPIO_AF_2  0x02
+#define GPIO_AF_3  0x03
+#define GPIO_AF_4  0x04
+#define GPIO_AF_5  0x05
+#define GPIO_AF_6  0x06
+#define GPIO_AF_7  0x07
+#define GPIO_AF_8  0x08
+#define GPIO_AF_9  0x09
+#define GPIO_AF_10 0x0A
+#define GPIO_AF_11 0x0B
+#define GPIO_AF_12 0x0C
+#define GPIO_AF_13 0x0D
+#define GPIO_AF_14 0x0E
+#define GPIO_AF_15 0x0F
+
+//==============================================================================
 /**
  * @brief: Set pin mode
  * This function sets the mode of a specific GPIO pin on a specified port. It takes the port ID, pin ID, and mode as parameters, identifies the correct register to modify based on the port ID, and then updates the mode bits for the specified pin accordingly. The function returns a status indicating whether the operation was successful or not, allowing the caller to handle any potential errors in configuring the
@@ -88,80 +163,6 @@ Std_ReturnType GPIO_SetPinValue(u8 Copy_u8PortId, u8 Copy_u8PinId, u8 Copy_pu8Pi
 
 Std_ReturnType GPIO_AF_Set(u8 Copy_u8PortId,u8 Copy_u8PinId,u8 Copy_u8AFValue);
 
-
-
-/***************************< PORTS >************************************************/
-#define GPIO_PORTS_Count  3
-
-#define PORTA 0
-#define PORTB 1
-#define PORTC 2
-#define PORTD 3
-#define PORTE 4
-
-/***************************< PINS BITS >********************************************/
-#define GPIO_PIN_0  0
-#define GPIO_PIN_1  1
-#define GPIO_PIN_2  2
-#define GPIO_PIN_3  3
-#define GPIO_PIN_4  4
-#define GPIO_PIN_5  5
-#define GPIO_PIN_6  6   
-#define GPIO_PIN_7  7
-#define GPIO_PIN_8  8
-#define GPIO_PIN_9  9
-#define GPIO_PIN_10 10
-#define GPIO_PIN_11 11
-#define GPIO_PIN_12 12
-#define GPIO_PIN_13 13
-#define GPIO_PIN_14 14
-#define GPIO_PIN_15 15
-
-/*************************< MODES >************************************************/
-#define GPIO_MODE_INPUT  0x00
-#define GPIO_MODE_OUTPUT 0x01
-#define GPIO_MODE_AF     0x02
-#define GPIO_MODE_ANALOG 0x03
-
-/*************************< OUTPUT TYPES >***********************************************/
-#define GPIO_OUTPUT_TYPE_PUSH_PULL 0x00
-#define GPIO_OUTPUT_TYPE_OPEN_DRAIN 0x01
-
-/*************************< OUTPUT SPEEDS >***********************************************/
-#define GPIO_OUTPUT_SPEED_LOW 0x00
-#define GPIO_OUTPUT_SPEED_MEDIUM 0x01
-#define GPIO_OUTPUT_SPEED_HIGH 0x02
-#define GPIO_OUTPUT_SPEED_VERY_HIGH 0x03
-
-/*************************< PULL UP DOWN RESISTORS >***********************************************/
-#define GPIO_PULL_UP_DOWN_NONE 0x00
-#define GPIO_PULL_UP_DOWN_PULL_UP 0x01
-#define GPIO_PULL_UP_DOWN_PULL_DOWN 0x02    
-
-
-/***********************< PIN VALUES >************************************/
-#define GPIO_PIN_VALUE_LOW  0
-#define GPIO_PIN_VALUE_HIGH 1
-
-
-/***********************< AF VALUES >************************************/
-
-#define GPIO_AF_0  0x00
-#define GPIO_AF_1  0x01
-#define GPIO_AF_2  0x02
-#define GPIO_AF_3  0x03
-#define GPIO_AF_4  0x04
-#define GPIO_AF_5  0x05
-#define GPIO_AF_6  0x06
-#define GPIO_AF_7  0x07
-#define GPIO_AF_8  0x08
-#define GPIO_AF_9  0x09
-#define GPIO_AF_10 0x0A
-#define GPIO_AF_11 0x0B
-#define GPIO_AF_12 0x0C
-#define GPIO_AF_13 0x0D
-#define GPIO_AF_14 0x0E
-#define GPIO_AF_15 0x0F
 
 
 #endif

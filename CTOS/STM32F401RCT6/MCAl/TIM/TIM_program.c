@@ -1,11 +1,11 @@
 /********************************************************************
 * Author: Khaled Ahmed Elwan
 * Date: 19/9/2026
-* Version: 1.2
-* Description: TIM_program.c  (STM32F401RCT6 - TIM2..TIM5)
+* Version: 2.0
+* Description: TIM_program.c  (STM32F401RCT6 - TIM2..TIM5, TIM9..TIM11)
 *********************************************************************/
 
-/***************************< LIB ***********************************/
+/***************************< LIB **********************************/#include <stddef.h>
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 /***************************< MCAL **********************************/
@@ -14,54 +14,108 @@
 #include "TIM_config.h"
 
 /***************************< PRIVATE DATA ***************************/
-/* If the register struct in TIM_private.h has a different name, change it here */
-typedef TIM2_5_Type TIM_RegDef_t;
-static TIM_RegDef_t * const TIM_Reg[4] = { TIM2, TIM3, TIM4, TIM5 };
-
-static const u32 TIM_PscCfg[4]  = { TIM2_PSC,  TIM3_PSC,  TIM4_PSC,  TIM5_PSC  };
-static const u32 TIM_ArrCfg[4]  = { TIM2_ARR,  TIM3_ARR,  TIM4_ARR,  TIM5_ARR  };
-static const u8  TIM_DirCfg[4]  = { TIM2_DIR,  TIM3_DIR,  TIM4_DIR,  TIM5_DIR  };
-static const u8  TIM_ModeCfg[4] = { TIM2_MODE, TIM3_MODE, TIM4_MODE, TIM5_MODE };
-static const u8  TIM_BufCfg[4]  = { TIM2_BUFFER_MODE, TIM3_BUFFER_MODE,
-                                    TIM4_BUFFER_MODE, TIM5_BUFFER_MODE };
-
-/* Returned by the index helpers when the ID / channel is not valid */
+#define TIM_NUMBER          7
 #define TIM_INVALID_INDEX   0xFF
+
+/* Capabilities of each timer (same order as TIM_Id_t) */
+typedef struct
+{
+    u8 channels;    /* number of capture/compare channels        */
+    u8 is32Bit;     /* 1 = 32-bit counter, 0 = 16-bit counter    */
+    u8 hasDirCms;   /* 1 = CR1 has DIR and CMS bits              */
+} TIM_Cap_t;
+
+static const TIM_Cap_t TIM_Cap[TIM_NUMBER] =
+{
+    /* TIM2  */ { 4, 1, 1 },
+    /* TIM3  */ { 4, 0, 1 },
+    /* TIM4  */ { 4, 0, 1 },
+    /* TIM5  */ { 4, 1, 1 },
+    /* TIM9  */ { 2, 0, 0 },
+    /* TIM10 */ { 1, 0, 0 },
+    /* TIM11 */ { 1, 0, 0 },
+};
+
+static TIM_RegDef_t * const TIM_Reg[TIM_NUMBER] =
+{
+    TIM2, TIM3, TIM4, TIM5, TIM9, TIM10, TIM11
+};
+
+/* Timer input clock: TIM2..TIM5 on APB1, TIM9..TIM11 on APB2 */
+static const u32 TIM_ClkCfg[TIM_NUMBER] =
+{
+    TIM_APB1_TIMER_CLK_HZ, TIM_APB1_TIMER_CLK_HZ,
+    TIM_APB1_TIMER_CLK_HZ, TIM_APB1_TIMER_CLK_HZ,
+    TIM_APB2_TIMER_CLK_HZ, TIM_APB2_TIMER_CLK_HZ,
+    TIM_APB2_TIMER_CLK_HZ
+};
+
+static const u32 TIM_PscCfg[TIM_NUMBER] =
+{
+    TIM2_PSC, TIM3_PSC, TIM4_PSC, TIM5_PSC, TIM9_PSC, TIM10_PSC, TIM11_PSC
+};
+
+static const u32 TIM_ArrCfg[TIM_NUMBER] =
+{
+    TIM2_ARR, TIM3_ARR, TIM4_ARR, TIM5_ARR, TIM9_ARR, TIM10_ARR, TIM11_ARR
+};
+
+static const u8 TIM_BufCfg[TIM_NUMBER] =
+{
+    TIM2_BUFFER_MODE, TIM3_BUFFER_MODE, TIM4_BUFFER_MODE, TIM5_BUFFER_MODE,
+    TIM9_BUFFER_MODE, TIM10_BUFFER_MODE, TIM11_BUFFER_MODE
+};
+
+/* DIR and alignment exist only in TIM2..TIM5 (the other entries are unused) */
+static const u8 TIM_DirCfg[TIM_NUMBER] =
+{
+    TIM2_DIR, TIM3_DIR, TIM4_DIR, TIM5_DIR, 0, 0, 0
+};
+
+static const u8 TIM_ModeCfg[TIM_NUMBER] =
+{
+    TIM2_MODE, TIM3_MODE, TIM4_MODE, TIM5_MODE,
+    EDGE_ALIGNED, EDGE_ALIGNED, EDGE_ALIGNED
+};
 
 /***************************< PRIVATE HELPERS ************************/
 
-/* Converts the timer ID to an array index (0..3), independent of the enum values.
- * Returns TIM_INVALID_INDEX for an invalid ID. */
+/* Timer ID -> array index. Returns TIM_INVALID_INDEX for an invalid ID. */
 static u8 TIM_u8GetIndex(TIM_Id_t Copy_Id)
 {
     switch (Copy_Id)
     {
-        case TIM_2: return 0;
-        case TIM_3: return 1;
-        case TIM_4: return 2;
-        case TIM_5: return 3;
-        default:    return TIM_INVALID_INDEX;
+        case TIM_2:  return 0;
+        case TIM_3:  return 1;
+        case TIM_4:  return 2;
+        case TIM_5:  return 3;
+        case TIM_9:  return 4;
+        case TIM_10: return 5;
+        case TIM_11: return 6;
+        default:     return TIM_INVALID_INDEX;
     }
 }
 
-/* Converts CHANNEL_x to a channel index (0..3), independent of the macro values.
- * Returns TIM_INVALID_INDEX for an invalid channel. */
-static u8 TIM_u8GetChannelIndex(u8 Copy_Channel)
+/* CHANNEL_x -> channel index (0..3). Returns TIM_INVALID_INDEX if the channel
+ * is invalid or does not exist on this timer (e.g. CHANNEL_3 on TIM10). */
+static u8 TIM_u8GetChannelIndex(u8 Copy_Idx, u8 Copy_Channel)
 {
+    u8 ch;
+
     switch (Copy_Channel)
     {
-        case CHANNEL_1: return 0;
-        case CHANNEL_2: return 1;
-        case CHANNEL_3: return 2;
-        case CHANNEL_4: return 3;
+        case CHANNEL_1: ch = 0; break;
+        case CHANNEL_2: ch = 1; break;
+        case CHANNEL_3: ch = 2; break;
+        case CHANNEL_4: ch = 3; break;
         default:        return TIM_INVALID_INDEX;
     }
-}
 
-/* Only TIM2 and TIM5 have a 32-bit counter (TIM3/TIM4 are 16-bit) */
-static u8 TIM_u8Is32Bit(u8 Copy_Idx)
-{
-    return (Copy_Idx == 0 || Copy_Idx == 3);
+    if (ch >= TIM_Cap[Copy_Idx].channels)
+    {
+        return TIM_INVALID_INDEX;
+    }
+    return ch;
 }
 
 /* Applies the counter alignment (CR1.CMS bits) */
@@ -99,21 +153,24 @@ void TIM_voidInit(TIM_Id_t Copy_Id)
 
     TIM_RegDef_t *t = TIM_Reg[idx];
 
-    /* 1) Counter alignment (CMS) */
-    TIM_voidApplyAlignment(t, TIM_ModeCfg[idx]);
-
-    /* 2) Direction: only applies in edge-aligned mode (DIR is read-only in center-aligned) */
-    if (TIM_ModeCfg[idx] == EDGE_ALIGNED)
+    /* 1) Alignment and direction (only TIM2..TIM5 have these bits) */
+    if (TIM_Cap[idx].hasDirCms)
     {
-        if (TIM_DirCfg[idx] == 0) { CLR_BIT(t->CR1, TIM_CR1_DIR); }
-        else                      { SET_BIT(t->CR1, TIM_CR1_DIR); }
+        TIM_voidApplyAlignment(t, TIM_ModeCfg[idx]);
+
+        /* DIR is read-only in center-aligned mode */
+        if (TIM_ModeCfg[idx] == EDGE_ALIGNED)
+        {
+            if (TIM_DirCfg[idx] == 0) { CLR_BIT(t->CR1, TIM_CR1_DIR); }
+            else                      { SET_BIT(t->CR1, TIM_CR1_DIR); }
+        }
     }
 
-    /* 3) Auto-reload preload (ARPE) */
+    /* 2) Auto-reload preload (ARPE) */
     if (TIM_BufCfg[idx] == ENABLE_BUFFER) { SET_BIT(t->CR1, TIM_CR1_ARPE); }
     else                                  { CLR_BIT(t->CR1, TIM_CR1_ARPE); }
 
-    /* 4) Prescaler and auto-reload values */
+    /* 3) Prescaler and auto-reload values */
     t->PSC = TIM_PscCfg[idx];
     t->ARR = TIM_ArrCfg[idx];
 }
@@ -133,7 +190,7 @@ void TIM_voidSetPeriod(TIM_Id_t Copy_Id, u32 Copy_Arr)
     u8 idx = TIM_u8GetIndex(Copy_Id);
     if (idx == TIM_INVALID_INDEX) return;
 
-    TIM_Reg[idx]->ARR = Copy_Arr;   /* TIM3/TIM4 are 16-bit only */
+    TIM_Reg[idx]->ARR = Copy_Arr;   /* 16-bit timers ignore the upper bits */
 }
 
 /*===============================< TIM_voidStart >=========================*/
@@ -163,8 +220,10 @@ void TIM_voidStop(TIM_Id_t Copy_Id)
 void TIM_voidSetCaptureCompareValue(TIM_Id_t Copy_Id, u8 Copy_Channel, u32 Copy_CCR)
 {
     u8 idx = TIM_u8GetIndex(Copy_Id);
-    u8 ch  = TIM_u8GetChannelIndex(Copy_Channel);
-    if (idx == TIM_INVALID_INDEX || ch == TIM_INVALID_INDEX) return;
+    if (idx == TIM_INVALID_INDEX) return;
+
+    u8 ch = TIM_u8GetChannelIndex(idx, Copy_Channel);
+    if (ch == TIM_INVALID_INDEX) return;
 
     switch (ch)
     {
@@ -186,8 +245,10 @@ void TIM_voidSetCaptureCompareValue(TIM_Id_t Copy_Id, u8 Copy_Channel, u32 Copy_
 void TIM_voidSetCaptureCompareMode(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Mode)
 {
     u8 idx = TIM_u8GetIndex(Copy_Id);
-    u8 ch  = TIM_u8GetChannelIndex(Copy_Channel);
-    if (idx == TIM_INVALID_INDEX || ch == TIM_INVALID_INDEX) return;
+    if (idx == TIM_INVALID_INDEX) return;
+
+    u8 ch = TIM_u8GetChannelIndex(idx, Copy_Channel);
+    if (ch == TIM_INVALID_INDEX) return;
 
     /* CH1/CH2 live in CCMR1, CH3/CH4 live in CCMR2. Odd channels are shifted by 8 bits. */
     volatile u32 *ccmr  = (ch < 2) ? &TIM_Reg[idx]->CCMR1 : &TIM_Reg[idx]->CCMR2;
@@ -204,8 +265,10 @@ void TIM_voidSetCaptureCompareMode(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Mo
 void TIM_voidSetOutputCompareMode(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Mode)
 {
     u8 idx = TIM_u8GetIndex(Copy_Id);
-    u8 ch  = TIM_u8GetChannelIndex(Copy_Channel);
-    if (idx == TIM_INVALID_INDEX || ch == TIM_INVALID_INDEX) return;
+    if (idx == TIM_INVALID_INDEX) return;
+
+    u8 ch = TIM_u8GetChannelIndex(idx, Copy_Channel);
+    if (ch == TIM_INVALID_INDEX) return;
 
     volatile u32 *ccmr  = (ch < 2) ? &TIM_Reg[idx]->CCMR1 : &TIM_Reg[idx]->CCMR2;
     u8            shift = (u8)((ch % 2) * 8);
@@ -221,8 +284,10 @@ void TIM_voidSetOutputCompareMode(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Mod
 void TIM_voidEnableChannel(TIM_Id_t Copy_Id, u8 Copy_Channel)
 {
     u8 idx = TIM_u8GetIndex(Copy_Id);
-    u8 ch  = TIM_u8GetChannelIndex(Copy_Channel);
-    if (idx == TIM_INVALID_INDEX || ch == TIM_INVALID_INDEX) return;
+    if (idx == TIM_INVALID_INDEX) return;
+
+    u8 ch = TIM_u8GetChannelIndex(idx, Copy_Channel);
+    if (ch == TIM_INVALID_INDEX) return;
 
     u8 bit = (u8)(ch * 4);                                   /* CCxE */
     SET_BIT(TIM_Reg[idx]->CCER, bit);
@@ -232,8 +297,10 @@ void TIM_voidEnableChannel(TIM_Id_t Copy_Id, u8 Copy_Channel)
 void TIM_voidDisableChannel(TIM_Id_t Copy_Id, u8 Copy_Channel)
 {
     u8 idx = TIM_u8GetIndex(Copy_Id);
-    u8 ch  = TIM_u8GetChannelIndex(Copy_Channel);
-    if (idx == TIM_INVALID_INDEX || ch == TIM_INVALID_INDEX) return;
+    if (idx == TIM_INVALID_INDEX) return;
+
+    u8 ch = TIM_u8GetChannelIndex(idx, Copy_Channel);
+    if (ch == TIM_INVALID_INDEX) return;
 
     u8 bit = (u8)(ch * 4);                                   /* CCxE */
     CLR_BIT(TIM_Reg[idx]->CCER, bit);
@@ -244,8 +311,10 @@ void TIM_voidDisableChannel(TIM_Id_t Copy_Id, u8 Copy_Channel)
 void TIM_voidSetPolarity(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Polarity)
 {
     u8 idx = TIM_u8GetIndex(Copy_Id);
-    u8 ch  = TIM_u8GetChannelIndex(Copy_Channel);
-    if (idx == TIM_INVALID_INDEX || ch == TIM_INVALID_INDEX) return;
+    if (idx == TIM_INVALID_INDEX) return;
+
+    u8 ch = TIM_u8GetChannelIndex(idx, Copy_Channel);
+    if (ch == TIM_INVALID_INDEX) return;
 
     u8 bit = (u8)(ch * 4 + 1);                               /* CCxP */
     if (Copy_Polarity == 0) { CLR_BIT(TIM_Reg[idx]->CCER, bit); }
@@ -254,9 +323,10 @@ void TIM_voidSetPolarity(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Polarity)
 
 /*===================< TIM_voidSetPwmFrequency >===========================
  * Calculates PSC and ARR from the requested frequency (in Hz) and applies them.
+ *   ticks per period = (PSC + 1) x (ARR + 1)
  * Takes into account the counter width (16/32-bit) and center-aligned mode
- * (in center-aligned mode the counter counts up and down, so the output
- * frequency is half for the same ARR). */
+ * (in center-aligned mode the counter counts up and down, so the period is
+ * 2 x ARR ticks). */
 void TIM_voidSetPwmFrequency(TIM_Id_t Copy_Id, u32 Copy_Hz)
 {
     u8 idx = TIM_u8GetIndex(Copy_Id);
@@ -264,15 +334,16 @@ void TIM_voidSetPwmFrequency(TIM_Id_t Copy_Id, u32 Copy_Hz)
 
     TIM_RegDef_t *t = TIM_Reg[idx];
 
-    u32 ticks = TIM_CLK_HZ / Copy_Hz;                   /* Timer ticks per PWM period */
-    if (TIM_ModeCfg[idx] != EDGE_ALIGNED)
+    u32 ticks = TIM_ClkCfg[idx] / Copy_Hz;              /* Timer ticks per PWM period */
+
+    if (TIM_Cap[idx].hasDirCms && TIM_ModeCfg[idx] != EDGE_ALIGNED)
     {
         ticks /= 2;                                     /* Center-aligned: up + down = 2 x ARR */
     }
     if (ticks < 2) return;                              /* Requested frequency is too high */
 
     /* Smallest PSC that lets ARR fit in the counter width */
-    u32 psc = TIM_u8Is32Bit(idx) ? 0 : (ticks / 65536);
+    u32 psc = TIM_Cap[idx].is32Bit ? 0 : ((ticks - 1) / 65536);
     u32 arr = (ticks / (psc + 1)) - 1;
 
     t->PSC = psc;
@@ -282,7 +353,8 @@ void TIM_voidSetPwmFrequency(TIM_Id_t Copy_Id, u32 Copy_Hz)
 
 /*===================< TIM_voidSetDuty >===================================
  * Sets the duty cycle in percent (0..100), based on the current ARR value.
- * ccr = (ARR + 1) * percent / 100, split into two parts to avoid 32-bit overflow. */
+ * ccr = (ARR + 1) * percent / 100, split into two parts to avoid 32-bit overflow.
+ * Call this AFTER TIM_voidSetPwmFrequency (it depends on the current ARR). */
 void TIM_voidSetDuty(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Percent)
 {
     u8 idx = TIM_u8GetIndex(Copy_Id);
@@ -292,6 +364,12 @@ void TIM_voidSetDuty(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Percent)
 
     u32 period = TIM_Reg[idx]->ARR + 1;
     u32 ccr    = (period / 100) * Copy_Percent + ((period % 100) * Copy_Percent) / 100;
+
+    /* 16-bit CCR cannot hold 65536 (100% with ARR = 65535) */
+    if (!TIM_Cap[idx].is32Bit && ccr > 0xFFFF)
+    {
+        ccr = 0xFFFF;
+    }
 
     TIM_voidSetCaptureCompareValue(Copy_Id, Copy_Channel, ccr);
 }

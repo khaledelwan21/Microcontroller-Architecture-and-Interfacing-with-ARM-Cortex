@@ -566,8 +566,6 @@ Discarded input sections
                 0x00000000       0x3c CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
  .text.RCC_DisablePeripheralClock
                 0x00000000       0xc4 CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
- .text.RCC_GetFrequency
-                0x00000000       0xe0 CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
  .debug_macro   0x00000000      0xad2 CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
  .debug_macro   0x00000000       0x1c CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
@@ -582,16 +580,10 @@ Discarded input sections
  .text          0x00000000        0x0 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
  .data          0x00000000        0x0 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
  .bss           0x00000000        0x0 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
- .text.GPIO_SetPinOutputType
-                0x00000000      0x140 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
- .text.GPIO_SetPinOutputSpeed
-                0x00000000      0x154 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
  .text.GPIO_SetPinPullUpDown
                 0x00000000      0x154 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
  .text.GPIO_GetPinValue
                 0x00000000       0xe0 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
- .text.GPIO_SetPinValue
-                0x00000000      0x194 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
  .debug_macro   0x00000000      0xad2 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
  .debug_macro   0x00000000       0x1c CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
  .debug_macro   0x00000000       0x22 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
@@ -655,7 +647,7 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 0x08000000                g_pfnVectors
                 0x08000194                        . = ALIGN (0x4)
 
-.text           0x08000194      0xda0
+.text           0x08000194     0x12e0
                 0x08000194                        . = ALIGN (0x4)
  *(.text)
  .text          0x08000194       0x40 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
@@ -679,210 +671,222 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  .text.__register_exitproc
                 0x08000274       0x80 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__atexit.o)
                 0x08000274                __register_exitproc
- .text.main     0x080002f4       0x6c CMakeFiles/TIM_test.dir/Src/main.c.obj
+ .text.main     0x080002f4       0xa4 CMakeFiles/TIM_test.dir/Src/main.c.obj
                 0x080002f4                main
  .text.Reset_Handler
-                0x08000360       0x50 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
-                0x08000360                Reset_Handler
+                0x08000398       0x50 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
+                0x08000398                Reset_Handler
  .text.Default_Handler
-                0x080003b0        0x2 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
-                0x080003b0                EXTI2_IRQHandler
-                0x080003b0                DebugMon_Handler
-                0x080003b0                SPI4_IRQHandler
-                0x080003b0                TIM1_CC_IRQHandler
-                0x080003b0                DMA2_Stream5_IRQHandler
-                0x080003b0                HardFault_Handler
-                0x080003b0                DMA1_Stream5_IRQHandler
-                0x080003b0                SysTick_Handler
-                0x080003b0                SDIO_IRQHandler
-                0x080003b0                TAMP_STAMP_IRQHandler
-                0x080003b0                PendSV_Handler
-                0x080003b0                NMI_Handler
-                0x080003b0                EXTI3_IRQHandler
-                0x080003b0                TIM1_UP_TIM10_IRQHandler
-                0x080003b0                I2C3_ER_IRQHandler
-                0x080003b0                EXTI18_OTG_FS_WKUP_IRQHandler
-                0x080003b0                EXTI0_IRQHandler
-                0x080003b0                I2C2_EV_IRQHandler
-                0x080003b0                DMA1_Stream2_IRQHandler
-                0x080003b0                UsageFault_Handler
-                0x080003b0                DMA2_Stream2_IRQHandler
-                0x080003b0                SPI1_IRQHandler
-                0x080003b0                TIM1_BRK_TIM9_IRQHandler
-                0x080003b0                DMA2_Stream3_IRQHandler
-                0x080003b0                USART6_IRQHandler
-                0x080003b0                DMA2_Stream0_IRQHandler
-                0x080003b0                TIM4_IRQHandler
-                0x080003b0                I2C1_EV_IRQHandler
-                0x080003b0                DMA1_Stream6_IRQHandler
-                0x080003b0                DMA1_Stream1_IRQHandler
-                0x080003b0                TIM3_IRQHandler
-                0x080003b0                RCC_IRQHandler
-                0x080003b0                Default_Handler
-                0x080003b0                EXTI15_10_IRQHandler
-                0x080003b0                ADC_IRQHandler
-                0x080003b0                DMA1_Stream7_IRQHandler
-                0x080003b0                TIM5_IRQHandler
-                0x080003b0                DMA2_Stream7_IRQHandler
-                0x080003b0                I2C3_EV_IRQHandler
-                0x080003b0                EXTI9_5_IRQHandler
-                0x080003b0                SPI2_IRQHandler
-                0x080003b0                MemManage_Handler
-                0x080003b0                DMA1_Stream0_IRQHandler
-                0x080003b0                SVC_Handler
-                0x080003b0                EXTI4_IRQHandler
-                0x080003b0                EXTI22_RTC_WKUP_IRQHandler
-                0x080003b0                TIM2_IRQHandler
-                0x080003b0                EXTI16_PVD_IRQHandler
-                0x080003b0                TIM1_TRG_COM_TIM11_IRQHandler
-                0x080003b0                EXTI1_IRQHandler
-                0x080003b0                EXTI17_RTC_Alarm_IRQHandler
-                0x080003b0                USART2_IRQHandler
-                0x080003b0                I2C2_ER_IRQHandler
-                0x080003b0                DMA2_Stream1_IRQHandler
-                0x080003b0                FLASH_IRQHandler
-                0x080003b0                DMA2_Stream4_IRQHandler
-                0x080003b0                BusFault_Handler
-                0x080003b0                USART1_IRQHandler
-                0x080003b0                OTG_FS_IRQHandler
-                0x080003b0                SPI3_IRQHandler
-                0x080003b0                DMA1_Stream4_IRQHandler
-                0x080003b0                I2C1_ER_IRQHandler
-                0x080003b0                DMA2_Stream6_IRQHandler
-                0x080003b0                DMA1_Stream3_IRQHandler
- *fill*         0x080003b2        0x2 
+                0x080003e8        0x2 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
+                0x080003e8                EXTI2_IRQHandler
+                0x080003e8                DebugMon_Handler
+                0x080003e8                SPI4_IRQHandler
+                0x080003e8                TIM1_CC_IRQHandler
+                0x080003e8                DMA2_Stream5_IRQHandler
+                0x080003e8                HardFault_Handler
+                0x080003e8                DMA1_Stream5_IRQHandler
+                0x080003e8                SysTick_Handler
+                0x080003e8                SDIO_IRQHandler
+                0x080003e8                TAMP_STAMP_IRQHandler
+                0x080003e8                PendSV_Handler
+                0x080003e8                NMI_Handler
+                0x080003e8                EXTI3_IRQHandler
+                0x080003e8                TIM1_UP_TIM10_IRQHandler
+                0x080003e8                I2C3_ER_IRQHandler
+                0x080003e8                EXTI18_OTG_FS_WKUP_IRQHandler
+                0x080003e8                EXTI0_IRQHandler
+                0x080003e8                I2C2_EV_IRQHandler
+                0x080003e8                DMA1_Stream2_IRQHandler
+                0x080003e8                UsageFault_Handler
+                0x080003e8                DMA2_Stream2_IRQHandler
+                0x080003e8                SPI1_IRQHandler
+                0x080003e8                TIM1_BRK_TIM9_IRQHandler
+                0x080003e8                DMA2_Stream3_IRQHandler
+                0x080003e8                USART6_IRQHandler
+                0x080003e8                DMA2_Stream0_IRQHandler
+                0x080003e8                TIM4_IRQHandler
+                0x080003e8                I2C1_EV_IRQHandler
+                0x080003e8                DMA1_Stream6_IRQHandler
+                0x080003e8                DMA1_Stream1_IRQHandler
+                0x080003e8                TIM3_IRQHandler
+                0x080003e8                RCC_IRQHandler
+                0x080003e8                Default_Handler
+                0x080003e8                EXTI15_10_IRQHandler
+                0x080003e8                ADC_IRQHandler
+                0x080003e8                DMA1_Stream7_IRQHandler
+                0x080003e8                TIM5_IRQHandler
+                0x080003e8                DMA2_Stream7_IRQHandler
+                0x080003e8                I2C3_EV_IRQHandler
+                0x080003e8                EXTI9_5_IRQHandler
+                0x080003e8                SPI2_IRQHandler
+                0x080003e8                MemManage_Handler
+                0x080003e8                DMA1_Stream0_IRQHandler
+                0x080003e8                SVC_Handler
+                0x080003e8                EXTI4_IRQHandler
+                0x080003e8                EXTI22_RTC_WKUP_IRQHandler
+                0x080003e8                TIM2_IRQHandler
+                0x080003e8                EXTI16_PVD_IRQHandler
+                0x080003e8                TIM1_TRG_COM_TIM11_IRQHandler
+                0x080003e8                EXTI1_IRQHandler
+                0x080003e8                EXTI17_RTC_Alarm_IRQHandler
+                0x080003e8                USART2_IRQHandler
+                0x080003e8                I2C2_ER_IRQHandler
+                0x080003e8                DMA2_Stream1_IRQHandler
+                0x080003e8                FLASH_IRQHandler
+                0x080003e8                DMA2_Stream4_IRQHandler
+                0x080003e8                BusFault_Handler
+                0x080003e8                USART1_IRQHandler
+                0x080003e8                OTG_FS_IRQHandler
+                0x080003e8                SPI3_IRQHandler
+                0x080003e8                DMA1_Stream4_IRQHandler
+                0x080003e8                I2C1_ER_IRQHandler
+                0x080003e8                DMA2_Stream6_IRQHandler
+                0x080003e8                DMA1_Stream3_IRQHandler
+ *fill*         0x080003ea        0x2 
  .text.TIM_u8GetIndex
-                0x080003b4       0x48 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x080003ec       0x48 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .text.TIM_u8GetChannelIndex
-                0x080003fc       0x48 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x08000434       0x48 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .text.TIM_u8Is32Bit
-                0x08000444       0x2a CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x0800047c       0x2a CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .text.TIM_voidApplyAlignment
-                0x0800046e       0x96 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x080004a6       0x96 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .text.TIM_voidInit
-                0x08000504       0xc0 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
-                0x08000504                TIM_voidInit
+                0x0800053c       0xc0 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x0800053c                TIM_voidInit
  .text.TIM_voidStart
-                0x080005c4       0x58 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
-                0x080005c4                TIM_voidStart
+                0x080005fc       0x58 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x080005fc                TIM_voidStart
  .text.TIM_voidSetCaptureCompareValue
-                0x0800061c       0x98 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
-                0x0800061c                TIM_voidSetCaptureCompareValue
+                0x08000654       0x98 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x08000654                TIM_voidSetCaptureCompareValue
  .text.TIM_voidSetCaptureCompareMode
-                0x080006b4       0x98 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
-                0x080006b4                TIM_voidSetCaptureCompareMode
+                0x080006ec       0x98 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x080006ec                TIM_voidSetCaptureCompareMode
  .text.TIM_voidSetOutputCompareMode
-                0x0800074c       0xb0 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
-                0x0800074c                TIM_voidSetOutputCompareMode
+                0x08000784       0xb0 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x08000784                TIM_voidSetOutputCompareMode
  .text.TIM_voidEnableChannel
-                0x080007fc       0x68 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
-                0x080007fc                TIM_voidEnableChannel
+                0x08000834       0x68 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x08000834                TIM_voidEnableChannel
  .text.TIM_voidSetPwmFrequency
-                0x08000864       0xa8 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
-                0x08000864                TIM_voidSetPwmFrequency
+                0x0800089c       0xa8 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x0800089c                TIM_voidSetPwmFrequency
  .text.TIM_voidSetDuty
-                0x0800090c       0x90 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
-                0x0800090c                TIM_voidSetDuty
+                0x08000944       0x90 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x08000944                TIM_voidSetDuty
  .text.RCC_InitSysClock
-                0x0800099c       0xec CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
-                0x0800099c                RCC_InitSysClock
+                0x080009d4       0xec CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
+                0x080009d4                RCC_InitSysClock
  .text.RCC_EnablePeripheralClock
-                0x08000a88       0xbc CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
-                0x08000a88                RCC_EnablePeripheralClock
+                0x08000ac0       0xbc CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
+                0x08000ac0                RCC_EnablePeripheralClock
+ .text.RCC_GetFrequency
+                0x08000b7c       0xe0 CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
+                0x08000b7c                RCC_GetFrequency
  .text.GPIO_SetPinMode
-                0x08000b44      0x154 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
-                0x08000b44                GPIO_SetPinMode
+                0x08000c5c      0x154 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+                0x08000c5c                GPIO_SetPinMode
+ .text.GPIO_SetPinOutputType
+                0x08000db0      0x140 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+                0x08000db0                GPIO_SetPinOutputType
+ .text.GPIO_SetPinOutputSpeed
+                0x08000ef0      0x154 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+                0x08000ef0                GPIO_SetPinOutputSpeed
+ .text.GPIO_SetPinValue
+                0x08001044      0x194 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+                0x08001044                GPIO_SetPinValue
  .text.GPIO_AF_Set
-                0x08000c98      0x284 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
-                0x08000c98                GPIO_AF_Set
+                0x080011d8      0x284 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+                0x080011d8                GPIO_AF_Set
  *(.glue_7)
- .glue_7        0x08000f1c        0x0 linker stubs
+ .glue_7        0x0800145c        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x08000f1c        0x0 linker stubs
+ .glue_7t       0x0800145c        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x08000f1c        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+ .eh_frame      0x0800145c        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.init)
- .init          0x08000f1c        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08000f1c                _init
- .init          0x08000f20        0x8 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+ .init          0x0800145c        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x0800145c                _init
+ .init          0x08001460        0x8 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
  *(.fini)
- .fini          0x08000f28        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
-                0x08000f28                _fini
- .fini          0x08000f2c        0x8 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
-                0x08000f34                        . = ALIGN (0x4)
-                0x08000f34                        _etext = .
+ .fini          0x08001468        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crti.o
+                0x08001468                _fini
+ .fini          0x0800146c        0x8 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtn.o
+                0x08001474                        . = ALIGN (0x4)
+                0x08001474                        _etext = .
 
-.vfp11_veneer   0x08000f34        0x0
- .vfp11_veneer  0x08000f34        0x0 linker stubs
+.vfp11_veneer   0x08001474        0x0
+ .vfp11_veneer  0x08001474        0x0 linker stubs
 
-.v4_bx          0x08000f34        0x0
- .v4_bx         0x08000f34        0x0 linker stubs
+.v4_bx          0x08001474        0x0
+ .v4_bx         0x08001474        0x0 linker stubs
 
-.iplt           0x08000f34        0x0
- .iplt          0x08000f34        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.iplt           0x08001474        0x0
+ .iplt          0x08001474        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08000f34       0x3c
-                0x08000f34                        . = ALIGN (0x4)
+.rodata         0x08001474       0x3c
+                0x08001474                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.TIM_Reg
-                0x08000f34       0x10 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x08001474       0x10 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .rodata.TIM_PscCfg
-                0x08000f44       0x10 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x08001484       0x10 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .rodata.TIM_ArrCfg
-                0x08000f54       0x10 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x08001494       0x10 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .rodata.TIM_DirCfg
-                0x08000f64        0x4 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x080014a4        0x4 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .rodata.TIM_ModeCfg
-                0x08000f68        0x4 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x080014a8        0x4 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .rodata.TIM_BufCfg
-                0x08000f6c        0x4 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
-                0x08000f70                        . = ALIGN (0x4)
+                0x080014ac        0x4 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x080014b0                        . = ALIGN (0x4)
 
-.ARM.extab      0x08000f70        0x0
-                0x08000f70                        . = ALIGN (0x4)
+.ARM.extab      0x080014b0        0x0
+                0x080014b0                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x08000f70                        . = ALIGN (0x4)
+                0x080014b0                        . = ALIGN (0x4)
 
-.ARM            0x08000f70        0x0
-                0x08000f70                        . = ALIGN (0x4)
-                0x08000f70                        __exidx_start = .
+.ARM            0x080014b0        0x0
+                0x080014b0                        . = ALIGN (0x4)
+                0x080014b0                        __exidx_start = .
  *(.ARM.exidx*)
-                0x08000f70                        __exidx_end = .
-                0x08000f70                        . = ALIGN (0x4)
+                0x080014b0                        __exidx_end = .
+                0x080014b0                        . = ALIGN (0x4)
 
-.preinit_array  0x08000f70        0x0
-                0x08000f70                        . = ALIGN (0x4)
-                0x08000f70                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x080014b0        0x0
+                0x080014b0                        . = ALIGN (0x4)
+                0x080014b0                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08000f70                        PROVIDE (__preinit_array_end = .)
-                0x08000f70                        . = ALIGN (0x4)
+                0x080014b0                        PROVIDE (__preinit_array_end = .)
+                0x080014b0                        . = ALIGN (0x4)
 
-.init_array     0x08000f70        0x8
-                0x08000f70                        . = ALIGN (0x4)
-                0x08000f70                        PROVIDE (__init_array_start = .)
+.init_array     0x080014b0        0x8
+                0x080014b0                        . = ALIGN (0x4)
+                0x080014b0                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x08000f70        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
+                0x080014b0        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x08000f74        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08000f78                        PROVIDE (__init_array_end = .)
-                0x08000f78                        . = ALIGN (0x4)
+ .init_array    0x080014b4        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080014b8                        PROVIDE (__init_array_end = .)
+                0x080014b8                        . = ALIGN (0x4)
 
-.fini_array     0x08000f78        0x4
-                0x08000f78                        . = ALIGN (0x4)
-                0x08000f78                        PROVIDE (__fini_array_start = .)
+.fini_array     0x080014b8        0x4
+                0x080014b8                        . = ALIGN (0x4)
+                0x080014b8                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08000f78        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x08000f7c                        PROVIDE (__fini_array_end = .)
-                0x08000f7c                        . = ALIGN (0x4)
-                0x08000f7c                        _sidata = LOADADDR (.data)
+ .fini_array    0x080014b8        0x4 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x080014bc                        PROVIDE (__fini_array_end = .)
+                0x080014bc                        . = ALIGN (0x4)
+                0x080014bc                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x08000f7c        0x0
- .rel.iplt      0x08000f7c        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x080014bc        0x0
+ .rel.iplt      0x080014bc        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000        0x4 load address 0x08000f7c
+.data           0x20000000        0x4 load address 0x080014bc
                 0x20000000                        _sdata = .
  *(.data)
  *(.data*)
@@ -893,10 +897,10 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  *(.RamFunc*)
                 0x20000004                        . = ALIGN (0x4)
 
-.igot.plt       0x20000004        0x0 load address 0x08000f80
+.igot.plt       0x20000004        0x0 load address 0x080014c0
  .igot.plt      0x20000004        0x0 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.tdata          0x20000004        0x0 load address 0x08000f80
+.tdata          0x20000004        0x0 load address 0x080014c0
  *(.tdata .tdata.* .gnu.linkonce.td.*)
                 0x20000004                        . = ALIGN (0x4)
                 0x20000004                        _edata = .
@@ -913,7 +917,7 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 [!provide]                        PROVIDE (__data_source_end = __tdata_source_end)
                 [!provide]                        PROVIDE (__data_source_size = (__data_source_end - __data_source))
 
-.tbss           0x20000004        0x0 load address 0x08000f80
+.tbss           0x20000004        0x0 load address 0x080014c0
                 0x20000004                        _sbss = .
                 0x20000004                        __bss_start__ = _sbss
                 [!provide]                        PROVIDE (__bss_start = .)
@@ -931,7 +935,7 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
                 [!provide]                        PROVIDE (__arm32_tls_tcb_offset = MAX (0x8, __tls_align))
                 [!provide]                        PROVIDE (__arm64_tls_tcb_offset = MAX (0x10, __tls_align))
 
-.bss            0x20000004      0x1b4 load address 0x08000f80
+.bss            0x20000004      0x1b8 load address 0x080014c0
  *(.bss)
  .bss           0x20000004       0x1c /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/thumb/v7e-m+fp/hard/crtbegin.o
  *(.bss*)
@@ -944,24 +948,27 @@ LOAD /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eab
  .bss.__atexit0
                 0x20000028      0x190 /opt/st/stm32cubeclt_1.21.0/GNU-tools-for-STM32/bin/../lib/gcc/arm-none-eabi/14.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__atexit.o)
                 0x20000028                __atexit0
+ .bss.freq      0x200001b8        0x4 CMakeFiles/TIM_test.dir/Src/main.c.obj
+                0x200001b8                freq
  *(COMMON)
-                0x200001b8                        . = ALIGN (0x4)
-                0x200001b8                        _ebss = .
-                0x200001b8                        __bss_end__ = _ebss
+                0x200001bc                        . = ALIGN (0x4)
+                0x200001bc                        _ebss = .
+                0x200001bc                        __bss_end__ = _ebss
                 [!provide]                        PROVIDE (__bss_end = .)
                 [!provide]                        PROVIDE (__bss_size = (__bss_end - __bss_start))
                 [!provide]                        PROVIDE (__non_tls_bss_start = ADDR (.bss))
 
 ._user_heap_stack
-                0x200001b8      0x600 load address 0x08000f80
-                0x200001b8                        . = ALIGN (0x8)
+                0x200001bc      0x604 load address 0x080014c0
+                0x200001c0                        . = ALIGN (0x8)
+ *fill*         0x200001bc        0x4 
                 [!provide]                        PROVIDE (end = .)
-                0x200001b8                        PROVIDE (_end = .)
-                0x200003b8                        . = (. + _Min_Heap_Size)
- *fill*         0x200001b8      0x200 
-                0x200007b8                        . = (. + _Min_Stack_Size)
- *fill*         0x200003b8      0x400 
-                0x200007b8                        . = ALIGN (0x8)
+                0x200001c0                        PROVIDE (_end = .)
+                0x200003c0                        . = (. + _Min_Heap_Size)
+ *fill*         0x200001c0      0x200 
+                0x200007c0                        . = (. + _Min_Stack_Size)
+ *fill*         0x200003c0      0x400 
+                0x200007c0                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a:*(*)
@@ -1014,19 +1021,19 @@ LOAD linker stubs
  .debug_frame   0x00000460       0xd0 CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
  .debug_frame   0x00000530      0x10c CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
 
-.debug_info     0x00000000      0xe5c
- .debug_info    0x00000000      0x1ea CMakeFiles/TIM_test.dir/Src/main.c.obj
- .debug_info    0x000001ea       0x30 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
- .debug_info    0x0000021a      0x7a5 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
- .debug_info    0x000009bf      0x1cf CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
- .debug_info    0x00000b8e      0x2ce CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+.debug_info     0x00000000      0xee6
+ .debug_info    0x00000000      0x274 CMakeFiles/TIM_test.dir/Src/main.c.obj
+ .debug_info    0x00000274       0x30 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
+ .debug_info    0x000002a4      0x7a5 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+ .debug_info    0x00000a49      0x1cf CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
+ .debug_info    0x00000c18      0x2ce CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
 
-.debug_abbrev   0x00000000      0x460
- .debug_abbrev  0x00000000       0xce CMakeFiles/TIM_test.dir/Src/main.c.obj
- .debug_abbrev  0x000000ce       0x24 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
- .debug_abbrev  0x000000f2      0x1c0 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
- .debug_abbrev  0x000002b2       0xb8 CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
- .debug_abbrev  0x0000036a       0xf6 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+.debug_abbrev   0x00000000      0x47c
+ .debug_abbrev  0x00000000       0xea CMakeFiles/TIM_test.dir/Src/main.c.obj
+ .debug_abbrev  0x000000ea       0x24 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
+ .debug_abbrev  0x0000010e      0x1c0 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+ .debug_abbrev  0x000002ce       0xb8 CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
+ .debug_abbrev  0x00000386       0xf6 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
 
 .debug_aranges  0x00000000      0x178
  .debug_aranges
@@ -1041,17 +1048,17 @@ LOAD linker stubs
                 0x00000128       0x50 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
 
 .debug_rnglists
-                0x00000000      0x114
+                0x00000000      0x115
  .debug_rnglists
-                0x00000000       0x13 CMakeFiles/TIM_test.dir/Src/main.c.obj
+                0x00000000       0x14 CMakeFiles/TIM_test.dir/Src/main.c.obj
  .debug_rnglists
-                0x00000013       0x19 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
+                0x00000014       0x19 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
  .debug_rnglists
-                0x0000002c       0x7b CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+                0x0000002d       0x7b CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
  .debug_rnglists
-                0x000000a7       0x2f CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
+                0x000000a8       0x2f CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
  .debug_rnglists
-                0x000000d6       0x3e CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+                0x000000d7       0x3e CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
 
 .debug_macro    0x00000000      0x975
  .debug_macro   0x00000000       0xcb CMakeFiles/TIM_test.dir/Src/main.c.obj
@@ -1071,20 +1078,20 @@ LOAD linker stubs
  .debug_macro   0x000008d4       0x50 CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
  .debug_macro   0x00000924       0x51 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
 
-.debug_line     0x00000000     0x1469
- .debug_line    0x00000000      0x364 CMakeFiles/TIM_test.dir/Src/main.c.obj
- .debug_line    0x00000364       0x7b CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
- .debug_line    0x000003df      0x586 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
- .debug_line    0x00000965      0x30b CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
- .debug_line    0x00000c70      0x7f9 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+.debug_line     0x00000000     0x1473
+ .debug_line    0x00000000      0x36e CMakeFiles/TIM_test.dir/Src/main.c.obj
+ .debug_line    0x0000036e       0x7b CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
+ .debug_line    0x000003e9      0x586 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+ .debug_line    0x0000096f      0x30b CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
+ .debug_line    0x00000c7a      0x7f9 CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
 
-.debug_str      0x00000000     0x636a
- .debug_str     0x00000000     0x636a CMakeFiles/TIM_test.dir/Src/main.c.obj
-                               0x5a95 (size before relaxing)
- .debug_str     0x0000636a      0x120 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
- .debug_str     0x0000636a     0x38a0 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
- .debug_str     0x0000636a     0x3afd CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
- .debug_str     0x0000636a     0x417b CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
+.debug_str      0x00000000     0x636f
+ .debug_str     0x00000000     0x636f CMakeFiles/TIM_test.dir/Src/main.c.obj
+                               0x5ae9 (size before relaxing)
+ .debug_str     0x0000636f      0x120 CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj
+ .debug_str     0x0000636f     0x38a0 CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj
+ .debug_str     0x0000636f     0x3afd CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj
+ .debug_str     0x0000636f     0x417b CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 CMakeFiles/TIM_test.dir/Src/main.c.obj
