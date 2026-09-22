@@ -99,4 +99,25 @@ typedef struct TIM_RegDef_t
 #define ENABLE_BUFFER           1
 #define DISABLE_BUFFER          0
 
+/**************************< NVIC (interrupt controller) >*****************
+ * IRQn -> NVIC_ISERx bit: ISER register index = IRQn / 32, bit = IRQn % 32
+ *****************************************************************************/
+#ifndef NVIC_ISER0_ADDRESS
+#define NVIC_ISER0_ADDRESS     0xE000E100UL
+#endif
+
+/**************************< Timer IRQ numbers (STM32F401) >***************
+ * TIM9/TIM10/TIM11 share their vector with TIM1's break/update/trigger
+ * lines. This is fine as long as TIM1 itself is not also generating those
+ * events; if TIM1 is used later, the shared handler must check both
+ * peripherals' status registers.
+ *****************************************************************************/
+#define TIM2_IRQn                28
+#define TIM3_IRQn                29
+#define TIM4_IRQn                30
+#define TIM5_IRQn                50
+#define TIM1_BRK_TIM9_IRQn       24
+#define TIM1_UP_TIM10_IRQn       25
+#define TIM1_TRG_COM_TIM11_IRQn  26
+
 #endif

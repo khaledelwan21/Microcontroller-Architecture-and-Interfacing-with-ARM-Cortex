@@ -84,4 +84,37 @@ void TIM_voidEncoderInit(TIM_Id_t Copy_Id);
 void TIM_voidEncoderReset(TIM_Id_t Copy_Id);
 u32  TIM_u32EncoderGetCount(TIM_Id_t Copy_Id);
 
+/*************************< Periodic interrupt (time base) >***************
+ * Lets a timer fire a fixed-period interrupt and run a user callback in it,
+ * independent of any PWM/encoder use on the same or other timers.
+ *
+ * Which timer runs in the interrupt = whichever TIM_Id_t you pass here.
+ * Which function executes inside the interrupt = the callback you register
+ *   with TIM_voidSetCallback.
+ * When the interrupt happens = every time the counter completes one period
+ *   (the update event), i.e. every (1 / Copy_Hz) seconds, once
+ *   TIM_voidEnableInterrupt + TIM_voidStart have both been called.
+ *
+ * The driver clears the update flag (SR.UIF) automatically right before
+ * calling the callback, so the callback itself does not need to (and must
+ * not need to, to avoid re-triggering immediately).
+ *
+ * Recommended order:
+ *   TIM_voidInit(id);
+ *   TIM_voidSetTimeBaseFrequency(id, hz);   // sets PSC/ARR only, no channels
+ *   TIM_voidSetCallback(id, MyFunction);
+ *   TIM_voidEnableInterrupt(id);            // DIER.UIE + NVIC, clears any
+ *                                            // stale pending flag first
+ *   TIM_voidStart(id);                      // UG + clear UIF + CEN
+ *
+ * MyFunction must be void MyFunction(void) and should be kept short, since
+ * it runs inside an ISR.
+ ****************************************************************************/
+typedef void (*TIM_Callback_t)(void);
+
+void TIM_voidSetTimeBaseFrequency(TIM_Id_t Copy_Id, u32 Copy_Hz);
+void TIM_voidSetCallback(TIM_Id_t Copy_Id, TIM_Callback_t Copy_Callback);
+void TIM_voidEnableInterrupt(TIM_Id_t Copy_Id);
+void TIM_voidDisableInterrupt(TIM_Id_t Copy_Id);
+
 #endif
