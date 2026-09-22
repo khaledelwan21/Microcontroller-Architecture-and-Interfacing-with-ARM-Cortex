@@ -5,7 +5,7 @@
 * Description: TIM_program.c  (STM32F401RCT6 - TIM2..TIM5, TIM9..TIM11)
 *********************************************************************/
 
-/***************************< LIB **********************************/#include <stddef.h>
+/***************************< LIB ***********************************/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 /***************************< MCAL **********************************/
@@ -372,4 +372,66 @@ void TIM_voidSetDuty(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Percent)
     }
 
     TIM_voidSetCaptureCompareValue(Copy_Id, Copy_Channel, ccr);
+}
+
+/*===================< TIM_voidEncoderInit >================================
+ * Configures CH1 (TI1) and CH2 (TI2) as encoder inputs and puts the timer
+ * in encoder mode 3 (SMS = 011): counts on every edge of both TI1 and TI2
+ * (x4 resolution). CH3/CH4 are left untouched and stay free for other use.
+ * Requires a timer with at least 2 channels; rejected on TIM10/TIM11.
+ * PSC is not used in encoder mode (CNT is driven by the input edges, not
+ * by the internal clock), so it is simply cleared. ARR is set to the
+ * counter's maximum value so CNT has the widest possible range before
+ * it wraps. Call TIM_voidStart() afterwards to enable the counter. */
+void TIM_voidEncoderInit(TIM_Id_t Copy_Id)
+{
+    u8 idx = TIM_u8GetIndex(Copy_Id);
+    if (idx == TIM_INVALID_INDEX) return;
+    if (TIM_Cap[idx].channels < 2) return;   /* needs CH1 and CH2 */
+
+    TIM_RegDef_t *t = TIM_Reg[idx];
+
+    /* CH1/CH2 as input, directly mapped on their own TI (CCxS = 01) */
+    t->CCMR1 &= ~((u32)0x3 << TIM_CCMR1_CC1S0);
+    t->CCMR1 &= ~((u32)0x3 << TIM_CCMR1_CC2S0);
+    t->CCMR1 |=  ((u32)0x1 << TIM_CCMR1_CC1S0);
+    t->CCMR1 |=  ((u32)0x1 << TIM_CCMR1_CC2S0);
+
+    /* Non-inverted, rising edge on both inputs (CC1P/CC1NP/CC2P/CC2NP = 0).
+     * Use TIM_voidSetPolarity(id, CHANNEL_1, 1) later to reverse direction. */
+    t->CCER &= ~(((u32)1 << 1) | ((u32)1 << 3) | ((u32)1 << 5) | ((u32)1 << 7));
+
+    /* Enable both capture channels (CC1E, CC2E) */
+    t->CCER |= ((u32)1 << 0) | ((u32)1 << 4);
+
+    /* Encoder mode 3: count on both TI1 and TI2 edges */
+    t->SMCR &= ~((u32)0x7 << TIM_SMCR_SMS0);
+    t->SMCR |=  ((u32)TIM_ENCODER_MODE_TI12 << TIM_SMCR_SMS0);
+
+    t->PSC = 0;                                          /* unused in encoder mode */
+    t->ARR = TIM_Cap[idx].is32Bit ? 0xFFFFFFFFu : 0xFFFFu; /* full counter range   */
+
+    SET_BIT(t->EGR, TIM_EGR_UG);
+}
+
+/*===================< TIM_voidEncoderReset >===============================
+ * Resets the position counter (CNT) back to 0. */
+void TIM_voidEncoderReset(TIM_Id_t Copy_Id)
+{
+    u8 idx = TIM_u8GetIndex(Copy_Id);
+    if (idx == TIM_INVALID_INDEX) return;
+
+    TIM_Reg[idx]->CNT = 0;
+}
+
+/*===================< TIM_u32EncoderGetCount >=============================
+ * Returns the raw position counter. It wraps around (modulo ARR+1) both
+ * increasing and decreasing, so to compute speed take the difference
+ * between two readings taken a known time apart. */
+u32 TIM_u32EncoderGetCount(TIM_Id_t Copy_Id)
+{
+    u8 idx = TIM_u8GetIndex(Copy_Id);
+    if (idx == TIM_INVALID_INDEX) return 0;
+
+    return TIM_Reg[idx]->CNT;
 }

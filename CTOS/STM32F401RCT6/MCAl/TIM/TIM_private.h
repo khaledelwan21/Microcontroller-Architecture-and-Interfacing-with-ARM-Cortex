@@ -76,6 +76,20 @@ typedef struct TIM_RegDef_t
 #define TIM_SR_UIF      0
 #define TIM_EGR_UG      0
 
+/* SMCR: Slave mode selection (SMS, bits 2:0). Not present on TIM10/TIM11. */
+#define TIM_SMCR_SMS0   0
+#define TIM_SMCR_SMS1   1
+#define TIM_SMCR_SMS2   2
+
+/* SMS values used for the encoder interface (SMCR.SMS) */
+#define TIM_ENCODER_MODE_TI1    0x01   /* count on TI1 edges only        */
+#define TIM_ENCODER_MODE_TI2    0x02   /* count on TI2 edges only        */
+#define TIM_ENCODER_MODE_TI12   0x03   /* count on both TI1 and TI2 (x4) */
+
+/* CCMR1: CC1S / CC2S (channel direction, 2 bits each) */
+#define TIM_CCMR1_CC1S0  0
+#define TIM_CCMR1_CC2S0  8
+
 /**************************< Config values >*******************************/
 #define EDGE_ALIGNED            0x00
 #define CENTER_ALIGNED_MODE_1   0x01
