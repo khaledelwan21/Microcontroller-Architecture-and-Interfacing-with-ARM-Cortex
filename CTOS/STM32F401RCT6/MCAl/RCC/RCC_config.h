@@ -50,18 +50,6 @@
 #define RCC_PLLN      336  /**< PLLN multiplication factor */
 #define RCC_PLLP      4    /**< PLLP division factor */
 
-/** @brief Encode PLLP value for register configuration
- * The RCC_PLLP_ENCODE macro takes a PLLP division factor (2, 4, 6, or 8) and encodes it into the format required for the RCC_PLLCFGR register. The PLLP division factor is encoded as follows:
- * - PLLP = 2: Encoded value = 0 (00 in binary)
- * - PLLP = 4: Encoded value = 1 (01 in binary)
- * - PLLP = 6: Encoded value = 2 (10 in binary)
- * - PLLP = 8: Encoded value = 3 (11 in binary)
- * The macro calculates the encoded value by dividing the PLLP division factor by 2 and subtracting 1, then shifting it to the correct position in the RCC_PLLCFGR register.
- * @code
- * #define RCC_PLLP_ENCODE(x)   (((x)/2 - 1) << RCC_PLLCFGR_PLLP_BITS)
- */ 
-
-#define RCC_PLLP_ENCODE(x)   (((x)/2 - 1) << RCC_PLLCFGR_PLLP_BITS)
 
 /** @brief Clock source selection 
  * Options:

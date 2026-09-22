@@ -24,7 +24,6 @@
 #include "TIM_interface.h"
 #include "RCC_interface.h"
 #include "GPIO_interface.h"
- #define REG(addr)   (*(volatile u32 *)(addr))
 u32 freq = 0;
 int main(void)
 {

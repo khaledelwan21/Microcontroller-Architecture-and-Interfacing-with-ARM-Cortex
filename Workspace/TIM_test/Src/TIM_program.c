@@ -5,13 +5,31 @@
 * Description: TIM_program.c  (STM32F401RCT6 - TIM2..TIM5, TIM9..TIM11)
 *********************************************************************/
 
-/***************************< LIB **********************************/#include <stddef.h>
+/***************************< LIB ***********************************/
+#include <stddef.h>
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 /***************************< MCAL **********************************/
 #include "TIM_interface.h"
 #include "TIM_private.h"
 #include "TIM_config.h"
+
+/***************************< REGISTER MAP CHECK **********************
+ * Build fails if the struct offsets do not match the reference manual */
+_Static_assert(offsetof(TIM_RegDef_t, DIER)  == 0x0C, "DIER offset");
+_Static_assert(offsetof(TIM_RegDef_t, EGR)   == 0x14, "EGR offset");
+_Static_assert(offsetof(TIM_RegDef_t, CCMR1) == 0x18, "CCMR1 offset");
+_Static_assert(offsetof(TIM_RegDef_t, CCMR2) == 0x1C, "CCMR2 offset");
+_Static_assert(offsetof(TIM_RegDef_t, CCER)  == 0x20, "CCER offset");
+_Static_assert(offsetof(TIM_RegDef_t, CNT)   == 0x24, "CNT offset");
+_Static_assert(offsetof(TIM_RegDef_t, PSC)   == 0x28, "PSC offset");
+_Static_assert(offsetof(TIM_RegDef_t, ARR)   == 0x2C, "ARR offset");
+_Static_assert(offsetof(TIM_RegDef_t, CCR1)  == 0x34, "CCR1 offset");
+_Static_assert(offsetof(TIM_RegDef_t, CCR2)  == 0x38, "CCR2 offset");
+_Static_assert(offsetof(TIM_RegDef_t, CCR3)  == 0x3C, "CCR3 offset");
+_Static_assert(offsetof(TIM_RegDef_t, CCR4)  == 0x40, "CCR4 offset");
+_Static_assert(offsetof(TIM_RegDef_t, DCR)   == 0x48, "DCR offset");
+_Static_assert(offsetof(TIM_RegDef_t, OR)    == 0x50, "OR offset");
 
 /***************************< PRIVATE DATA ***************************/
 #define TIM_NUMBER          7
@@ -373,3 +391,166 @@ void TIM_voidSetDuty(TIM_Id_t Copy_Id, u8 Copy_Channel, u8 Copy_Percent)
 
     TIM_voidSetCaptureCompareValue(Copy_Id, Copy_Channel, ccr);
 }
+
+/*===================< TIM_voidEncoderInit >================================
+ * Configures CH1 (TI1) and CH2 (TI2) as encoder inputs and puts the timer
+ * in encoder mode 3 (SMS = 011): counts on every edge of both TI1 and TI2
+ * (x4 resolution). CH3/CH4 are left untouched and stay free for other use.
+ * Requires a timer with at least 2 channels; rejected on TIM10/TIM11.
+ * PSC is not used in encoder mode (CNT is driven by the input edges, not
+ * by the internal clock), so it is simply cleared. ARR is set to the
+ * counter's maximum value so CNT has the widest possible range before
+ * it wraps. Call TIM_voidStart() afterwards to enable the counter. */
+void TIM_voidEncoderInit(TIM_Id_t Copy_Id)
+{
+    u8 idx = TIM_u8GetIndex(Copy_Id);
+    if (idx == TIM_INVALID_INDEX) return;
+    if (TIM_Cap[idx].channels < 2) return;   /* needs CH1 and CH2 */
+
+    TIM_RegDef_t *t = TIM_Reg[idx];
+
+    /* CH1/CH2 as input, directly mapped on their own TI (CCxS = 01) */
+    t->CCMR1 &= ~((u32)0x3 << TIM_CCMR1_CC1S0);
+    t->CCMR1 &= ~((u32)0x3 << TIM_CCMR1_CC2S0);
+    t->CCMR1 |=  ((u32)0x1 << TIM_CCMR1_CC1S0);
+    t->CCMR1 |=  ((u32)0x1 << TIM_CCMR1_CC2S0);
+
+    /* Non-inverted, rising edge on both inputs (CC1P/CC1NP/CC2P/CC2NP = 0).
+     * Use TIM_voidSetPolarity(id, CHANNEL_1, 1) later to reverse direction. */
+    t->CCER &= ~(((u32)1 << 1) | ((u32)1 << 3) | ((u32)1 << 5) | ((u32)1 << 7));
+
+    /* Enable both capture channels (CC1E, CC2E) */
+    t->CCER |= ((u32)1 << 0) | ((u32)1 << 4);
+
+    /* Encoder mode 3: count on both TI1 and TI2 edges */
+    t->SMCR &= ~((u32)0x7 << TIM_SMCR_SMS0);
+    t->SMCR |=  ((u32)TIM_ENCODER_MODE_TI12 << TIM_SMCR_SMS0);
+
+    t->PSC = 0;                                          /* unused in encoder mode */
+    t->ARR = TIM_Cap[idx].is32Bit ? 0xFFFFFFFFu : 0xFFFFu; /* full counter range   */
+
+    SET_BIT(t->EGR, TIM_EGR_UG);
+}
+
+/*===================< TIM_voidEncoderReset >===============================
+ * Resets the position counter (CNT) back to 0. */
+void TIM_voidEncoderReset(TIM_Id_t Copy_Id)
+{
+    u8 idx = TIM_u8GetIndex(Copy_Id);
+    if (idx == TIM_INVALID_INDEX) return;
+
+    TIM_Reg[idx]->CNT = 0;
+}
+
+/*===================< TIM_u32EncoderGetCount >=============================
+ * Returns the raw position counter. It wraps around (modulo ARR+1) both
+ * increasing and decreasing, so to compute speed take the difference
+ * between two readings taken a known time apart. */
+u32 TIM_u32EncoderGetCount(TIM_Id_t Copy_Id)
+{
+    u8 idx = TIM_u8GetIndex(Copy_Id);
+    if (idx == TIM_INVALID_INDEX) return 0;
+
+    return TIM_Reg[idx]->CNT;
+}
+
+/***************************< PERIODIC INTERRUPT (TIME BASE) **************/
+
+/* IRQ number of each timer, same order as TIM_Id_t / TIM_Reg */
+static const u8 TIM_IRQn[TIM_NUMBER] =
+{
+    TIM2_IRQn, TIM3_IRQn, TIM4_IRQn, TIM5_IRQn,
+    TIM1_BRK_TIM9_IRQn, TIM1_UP_TIM10_IRQn, TIM1_TRG_COM_TIM11_IRQn
+};
+
+/* One user callback slot per timer. NULL = no callback registered. */
+static TIM_Callback_t TIM_Callback[TIM_NUMBER] =
+{
+    NULL, NULL, NULL, NULL, NULL, NULL, NULL
+};
+
+/* Enables one IRQ line in the NVIC (IRQn -> ISERx bit) */
+static void TIM_voidNvicEnableIRQ(u8 Copy_IRQn)
+{
+    volatile u32 *iser = (volatile u32 *)(NVIC_ISER0_ADDRESS + 4u * (Copy_IRQn / 32u));
+    *iser = ((u32)1 << (Copy_IRQn % 32u));
+}
+
+/* Common handler body shared by every timer's IRQHandler: clears the update
+ * flag first (so the interrupt does not re-fire immediately), then calls
+ * the registered callback if any. */
+static void TIM_voidHandleUpdateIRQ(u8 Copy_Idx)
+{
+    TIM_RegDef_t *t = TIM_Reg[Copy_Idx];
+
+    if (t->SR & (1u << TIM_SR_UIF))
+    {
+        CLR_BIT(t->SR, TIM_SR_UIF);
+
+        if (TIM_Callback[Copy_Idx] != NULL)
+        {
+            TIM_Callback[Copy_Idx]();
+        }
+    }
+}
+
+/*===================< TIM_voidSetTimeBaseFrequency >=======================
+ * Sets PSC/ARR so the timer's update event happens at Copy_Hz per second.
+ * Identical math to TIM_voidSetPwmFrequency (it only touches PSC/ARR/EGR,
+ * no channel registers), given a clearer name for non-PWM (interrupt-only)
+ * use. Safe to call whether or not any channel is configured. */
+void TIM_voidSetTimeBaseFrequency(TIM_Id_t Copy_Id, u32 Copy_Hz)
+{
+    TIM_voidSetPwmFrequency(Copy_Id, Copy_Hz);
+}
+
+/*===================< TIM_voidSetCallback >=================================
+ * Registers the function to run inside the timer's update interrupt.
+ * Pass NULL to unregister. Keep the callback short: it runs inside an ISR. */
+void TIM_voidSetCallback(TIM_Id_t Copy_Id, TIM_Callback_t Copy_Callback)
+{
+    u8 idx = TIM_u8GetIndex(Copy_Id);
+    if (idx == TIM_INVALID_INDEX) return;
+
+    TIM_Callback[idx] = Copy_Callback;
+}
+
+/*===================< TIM_voidEnableInterrupt >=============================
+ * Enables the update interrupt (DIER.UIE) and the matching NVIC line.
+ * Clears any stale pending flag first so enabling it does not immediately
+ * fire on an old event (e.g. from a previous TIM_voidSetTimeBaseFrequency
+ * call, which forces an update via EGR.UG). */
+void TIM_voidEnableInterrupt(TIM_Id_t Copy_Id)
+{
+    u8 idx = TIM_u8GetIndex(Copy_Id);
+    if (idx == TIM_INVALID_INDEX) return;
+
+    TIM_RegDef_t *t = TIM_Reg[idx];
+
+    CLR_BIT(t->SR, TIM_SR_UIF);
+    SET_BIT(t->DIER, TIM_DIER_UIE);
+    TIM_voidNvicEnableIRQ(TIM_IRQn[idx]);
+}
+
+/*===================< TIM_voidDisableInterrupt >============================
+ * Stops the callback from firing. The NVIC line is left enabled (harmless,
+ * since DIER.UIE = 0 means the peripheral will not request the interrupt). */
+void TIM_voidDisableInterrupt(TIM_Id_t Copy_Id)
+{
+    u8 idx = TIM_u8GetIndex(Copy_Id);
+    if (idx == TIM_INVALID_INDEX) return;
+
+    CLR_BIT(TIM_Reg[idx]->DIER, TIM_DIER_UIE);
+}
+
+/***************************< IRQ HANDLERS **********************************
+ * Names must match the vector table in your startup file exactly.
+ * TIM9/10/11 share their vector with TIM1's break/update/trigger lines
+ * (see the IRQn comment in TIM_private.h). */
+void TIM2_IRQHandler(void)               { TIM_voidHandleUpdateIRQ(0); }
+void TIM3_IRQHandler(void)               { TIM_voidHandleUpdateIRQ(1); }
+void TIM4_IRQHandler(void)               { TIM_voidHandleUpdateIRQ(2); }
+void TIM5_IRQHandler(void)               { TIM_voidHandleUpdateIRQ(3); }
+void TIM1_BRK_TIM9_IRQHandler(void)      { TIM_voidHandleUpdateIRQ(4); }
+void TIM1_UP_TIM10_IRQHandler(void)      { TIM_voidHandleUpdateIRQ(5); }
+void TIM1_TRG_COM_TIM11_IRQHandler(void) { TIM_voidHandleUpdateIRQ(6); }
