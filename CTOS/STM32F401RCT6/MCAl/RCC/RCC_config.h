@@ -72,6 +72,6 @@
 #define RCC_PLLSRC        RCC_HSI
 
 
-
+RCC_HSI
 
 #endif /* RCC_CONFIG_H */

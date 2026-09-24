@@ -1,11 +1,9 @@
 # ninja log v5
-35	375	1790055774644222000	CMakeFiles/TIM_test.dir/Src/main.c.obj	22acf5e307f120c4
-411	1118	1790055775388210800	TIM_test.elf	f9b10fac71a0fbcf
+7	93	1790247754639539000	CMakeFiles/TIM_test.dir/Src/main.c.obj	22acf5e307f120c4
+149	232	1790248425134687700	TIM_test.elf	f9b10fac71a0fbcf
 2	228	1789883714284390700	CMakeFiles/TIM_test.dir/Src/syscall.c.obj	dd47837f8e8e0bd1
 3	30	1789883714086241300	CMakeFiles/TIM_test.dir/Src/startup_stm32f401xx.S.obj	d4a1eca831fdc5b0
 28	211	1789950983915937200	CMakeFiles/TIM_test.dir/Src/GPIO_program.c.obj	6851e0aaae80d03f
-35	411	1790055774681100200	CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj	ad9986a63340761c
+5	148	1790248425051354600	CMakeFiles/TIM_test.dir/Src/TIM_program.c.obj	ad9986a63340761c
 2	205	1789883714261355500	CMakeFiles/TIM_test.dir/Src/sysmem.c.obj	63cf35ae65d182b2
-21	272	1790027825817250000	CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj	3b3670d4eb65955
-2	88	1790055848611087300	CMakeFiles/TIM_test.dir/Src/main.c.obj	22acf5e307f120c4
-89	190	1790055848713259500	TIM_test.elf	f9b10fac71a0fbcf
+5	108	1790247740066944900	CMakeFiles/TIM_test.dir/Src/RCC_program.c.obj	3b3670d4eb65955

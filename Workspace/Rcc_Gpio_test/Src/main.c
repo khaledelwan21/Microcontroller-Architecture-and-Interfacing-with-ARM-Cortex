@@ -22,36 +22,37 @@
 #include "GPIO_interface.h"
 #include "STK_interface.h"
 
+u8 g_u8ButtonState = 0;
 void TogglePin(void)
 {
- TOG_BIT(GPIOC_ODR, GPIO_PIN_13); 
+    TOG_BIT(GPIOA_ODR, GPIO_PIN_7); 
 }
 int main(void)
 {
 
  RCC_InitSysClock();
 
- RCC_EnablePeripheralClock(RCC_AHB1_BUS,RCC_AHB1ENR_GPIOC_EN_BIT);
+ RCC_EnablePeripheralClock(RCC_AHB1_BUS,RCC_AHB1ENR_GPIOB_EN_BIT);
  RCC_EnablePeripheralClock(RCC_AHB1_BUS,RCC_AHB1ENR_GPIOA_EN_BIT);
 
 /******<< GPIOC 13 *****/
 
- GPIO_SetPinMode(PORTC, GPIO_PIN_13, GPIO_MODE_OUTPUT);
- GPIO_SetPinOutputType(PORTC, GPIO_PIN_13, GPIO_OUTPUT_TYPE_PUSH_PULL);
- GPIO_SetPinOutputSpeed(PORTC, GPIO_PIN_13, GPIO_OUTPUT_SPEED_LOW);
- GPIO_SetPinValue(PORTC, GPIO_PIN_13, GPIO_PIN_VALUE_HIGH);
+ GPIO_SetPinMode(PORTB, GPIO_PIN_0, GPIO_MODE_OUTPUT);
+ GPIO_SetPinOutputType(PORTB, GPIO_PIN_0, GPIO_OUTPUT_TYPE_PUSH_PULL);
+ GPIO_SetPinOutputSpeed(PORTB, GPIO_PIN_0, GPIO_OUTPUT_SPEED_LOW);
+ GPIO_SetPinValue(PORTB, GPIO_PIN_0, GPIO_PIN_VALUE_HIGH);
 
 /******<< GPIOA 7 *****/
 
  GPIO_SetPinMode(PORTA, GPIO_PIN_7, GPIO_MODE_OUTPUT);
  GPIO_SetPinOutputType(PORTA, GPIO_PIN_7, GPIO_OUTPUT_TYPE_PUSH_PULL);
  GPIO_SetPinOutputSpeed(PORTA, GPIO_PIN_7, GPIO_OUTPUT_SPEED_LOW);
- GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_LOW);
+ GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_HIGH);
 
 /******<< GPIOA 9 *****/
 
  GPIO_SetPinMode(PORTA, GPIO_PIN_9, GPIO_MODE_INPUT);
- GPIO_SetPinPullUpDown(PORTA, GPIO_PIN_9, GPIO_PULL_UP_DOWN_PULL_DOWN);
+ GPIO_SetPinPullUpDown(PORTA, GPIO_PIN_9, GPIO_PULL_UP_DOWN_PULL_UP);
 
 /************< STK >*************/
  STK_voidInit();
@@ -62,17 +63,7 @@ int main(void)
 
     while (1) 
     {
-       GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_LOW);
-       STK_delay_ms(100);
-       GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_HIGH);
-       STK_delay_ms(100);
-    }
+      
 
-    while (1) 
-    {
-       GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_LOW);
-       STK_delay_ms(100);
-       GPIO_SetPinValue(PORTA, GPIO_PIN_7, GPIO_PIN_VALUE_HIGH);
-       STK_delay_ms(100);
     }
 }

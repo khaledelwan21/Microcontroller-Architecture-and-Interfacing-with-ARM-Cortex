@@ -9,15 +9,6 @@
 
 #include "TIM_private.h"
 
-/*******< Timer input clock (NOT the bus clock) >*************************
- * If the bus prescaler is not 1, the timer clock = 2 x bus clock.
- * Example: SYSCLK = 84 MHz, APB1 = /2 (42 MHz), APB2 = /1 (84 MHz)
- *          => TIM2..TIM5 clock = 84 MHz, TIM9..TIM11 clock = 84 MHz
- * These values must match your RCC configuration.
- ***************************************************************************/
-#define TIM_APB1_TIMER_CLK_HZ   84000000UL      /* TIM2..TIM5   */
-#define TIM_APB2_TIMER_CLK_HZ   84000000UL      /* TIM9..TIM11  */
-
 /*******< Prescaler (PSC) >**********************************************/
 #define TIM2_PSC    83
 #define TIM3_PSC    83

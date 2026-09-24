@@ -13,7 +13,7 @@
 #include "TIM_interface.h"
 #include "TIM_private.h"
 #include "TIM_config.h"
-
+#include "RCC_interface.h"
 /***************************< REGISTER MAP CHECK **********************
  * Build fails if the struct offsets do not match the reference manual */
 _Static_assert(offsetof(TIM_RegDef_t, DIER)  == 0x0C, "DIER offset");
@@ -43,6 +43,24 @@ typedef struct
     u8 hasDirCms;   /* 1 = CR1 has DIR and CMS bits              */
 } TIM_Cap_t;
 
+static u32 TIM_u32ClkHz = 0;
+static u32 TIM_u32GetTimerClock(void)
+{
+    if (TIM_u32ClkHz == 0)
+    {
+        u32 Local_u32Freq = 0;
+
+        if (RCC_GetFrequency(&Local_u32Freq) == E_OK)
+        {
+            TIM_u32ClkHz = Local_u32Freq;
+        }
+        else
+        {
+            TIM_u32ClkHz = 84000000UL;   /* Default value */
+        }
+    }
+    return TIM_u32ClkHz;
+}
 static const TIM_Cap_t TIM_Cap[TIM_NUMBER] =
 {
     /* TIM2  */ { 4, 1, 1 },
@@ -59,14 +77,6 @@ static TIM_RegDef_t * const TIM_Reg[TIM_NUMBER] =
     TIM2, TIM3, TIM4, TIM5, TIM9, TIM10, TIM11
 };
 
-/* Timer input clock: TIM2..TIM5 on APB1, TIM9..TIM11 on APB2 */
-static const u32 TIM_ClkCfg[TIM_NUMBER] =
-{
-    TIM_APB1_TIMER_CLK_HZ, TIM_APB1_TIMER_CLK_HZ,
-    TIM_APB1_TIMER_CLK_HZ, TIM_APB1_TIMER_CLK_HZ,
-    TIM_APB2_TIMER_CLK_HZ, TIM_APB2_TIMER_CLK_HZ,
-    TIM_APB2_TIMER_CLK_HZ
-};
 
 static const u32 TIM_PscCfg[TIM_NUMBER] =
 {
@@ -352,7 +362,7 @@ void TIM_voidSetPwmFrequency(TIM_Id_t Copy_Id, u32 Copy_Hz)
 
     TIM_RegDef_t *t = TIM_Reg[idx];
 
-    u32 ticks = TIM_ClkCfg[idx] / Copy_Hz;              /* Timer ticks per PWM period */
+    u32 ticks = TIM_u32GetTimerClock() / Copy_Hz;              /* Timer ticks per PWM period */
 
     if (TIM_Cap[idx].hasDirCms && TIM_ModeCfg[idx] != EDGE_ALIGNED)
     {

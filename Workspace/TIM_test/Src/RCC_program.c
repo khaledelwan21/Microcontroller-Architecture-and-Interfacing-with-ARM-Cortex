@@ -247,12 +247,13 @@ Std_ReturnType RCC_GetFrequency(u32 *Copy_pu32Frequency)
             break;
 
         case RCC_PLL:
-
-            #if RCC_PLL_SOURCE == RCC_PLL_SRC_HSI
-                u64  PLLInputClock = HSI_VALUE;  // HSI frequency  
-            #elif RCC_PLL_SOURCE == RCC_PLL_SRC_HSE
-                u64  PLLInputClock = HSE_VALUE;   // HSE frequency
-            #endif
+        
+            u64 PLLInputClock;
+             #if RCC_PLLSRC == RCC_HSI
+                 PLLInputClock = HSI_VALUE;
+             #elif RCC_PLLSRC == RCC_HSE
+                 PLLInputClock = HSE_VALUE;
+             #endif
             Local_u32SystemClock = (u32)(((u64)PLLInputClock * RCC_PLLN) / (RCC_PLLM * RCC_PLLP)); // Calculate PLL output frequency based on configuration
             break;
 

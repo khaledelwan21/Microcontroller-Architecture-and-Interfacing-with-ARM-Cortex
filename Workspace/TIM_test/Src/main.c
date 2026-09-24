@@ -30,7 +30,9 @@ int main(void)
 
 RCC_InitSysClock();
 RCC_EnablePeripheralClock(RCC_APB1_BUS, RCC_APB1ENR_TIM2EN_BIT);
+RCC_EnablePeripheralClock(RCC_APB1_BUS, RCC_APB1ENR_TIM3EN_BIT);
 RCC_EnablePeripheralClock(RCC_APB2_BUS, RCC_APB2ENR_TIM10EN_BIT);
+RCC_EnablePeripheralClock(RCC_AHB1_BUS, RCC_AHB1ENR_GPIOA_EN_BIT);
 RCC_EnablePeripheralClock(RCC_AHB1_BUS, RCC_AHB1ENR_GPIOB_EN_BIT);
 RCC_EnablePeripheralClock(RCC_AHB1_BUS, RCC_AHB1ENR_GPIOC_EN_BIT);  
 RCC_GetFrequency(&freq);
@@ -46,18 +48,45 @@ RCC_GetFrequency(&freq);
 GPIO_SetPinMode(PORTA, GPIO_PIN_2, GPIO_MODE_AF);
 GPIO_AF_Set(PORTA, GPIO_PIN_2, GPIO_AF_3);
 
+/******<< GPIOA 15 *****/
+GPIO_SetPinMode(PORTA, GPIO_PIN_15, GPIO_MODE_AF);
+GPIO_AF_Set(PORTA, GPIO_PIN_15, GPIO_AF_1);
+
+/******<< GPIOA 7 *****/
+GPIO_SetPinMode(PORTA, GPIO_PIN_7, GPIO_MODE_AF);
+GPIO_AF_Set(PORTA, GPIO_PIN_7, GPIO_AF_2);
 /******<< GPIOA 0 *****/
 GPIO_SetPinMode(PORTB, GPIO_PIN_8, GPIO_MODE_AF);
 GPIO_AF_Set(PORTB, GPIO_PIN_8, GPIO_AF_3);
 
 /******<< GPIOA 1 *****/
+
+TIM_voidInit(TIM_2);
+TIM_voidSetCaptureCompareMode(TIM_2, CHANNEL_1, 0);
+TIM_voidSetOutputCompareMode(TIM_2, CHANNEL_1, TIM_OC_PWM_MODE1);
+TIM_voidSetPwmFrequency(TIM_2, 2000);      
+TIM_voidSetDuty(TIM_2, CHANNEL_1, 50);
+TIM_voidEnableChannel(TIM_2, CHANNEL_1);
+TIM_voidStart(TIM_2);
+
+
 TIM_voidInit(TIM_10);
 TIM_voidSetCaptureCompareMode(TIM_10, CHANNEL_1, 0);
 TIM_voidSetOutputCompareMode(TIM_10, CHANNEL_1, TIM_OC_PWM_MODE1);
 TIM_voidSetPwmFrequency(TIM_10, 200);      
-TIM_voidSetDuty(TIM_10, CHANNEL_1, 10);
+TIM_voidSetDuty(TIM_10, CHANNEL_1, 70);
 TIM_voidEnableChannel(TIM_10, CHANNEL_1);
 TIM_voidStart(TIM_10);
+
+/******<< GPIOA 1 *****/
+
+TIM_voidInit(TIM_3);
+TIM_voidSetCaptureCompareMode(TIM_3, CHANNEL_2, 0);
+TIM_voidSetOutputCompareMode(TIM_3, CHANNEL_2, TIM_OC_PWM_MODE1);
+TIM_voidSetPwmFrequency(TIM_3, 1000);      
+TIM_voidSetDuty(TIM_3, CHANNEL_2, 50);
+TIM_voidEnableChannel(TIM_3, CHANNEL_2);
+TIM_voidStart(TIM_3);
 
 
     /* Loop forever */

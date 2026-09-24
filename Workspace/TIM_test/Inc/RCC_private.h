@@ -150,7 +150,7 @@
 #define RCC_CRYSTAL_CLK                      1
 
 
-#define HSI_VALUE 16000000U /**< HSI frequency in Hz */
+#define HSI_VALUE 16240000UL /**< HSI frequency in Hz */
 #define HSE_VALUE 8000000U  /**< HSE frequency in Hz */
 
 
